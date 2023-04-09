@@ -1,0 +1,26 @@
+// Welche der folgenden Bezeichner sind gültig?
+// 1. $byte
+// 2. __1
+// 3. name-1
+// 4. 1Name
+// 5. operator
+// 6. True
+// – Bezeichner vs. Schlüsselwörter
+// – Code-Qualität
+// • Variablen
+// – Bestandteile: Bezeichner, Datentyp, Wert
+// – Interpretation: Adresse, vgl. Mathematik, Bild = Schachtel
+
+
+1.  $byte ist ein gültiger Bezeichner in Java.
+    
+2.  __1 ist ein gültiger Bezeichner in Java.
+    
+3.  name-1 ist kein gültiger Bezeichner in Java, da das Minuszeichen ein nicht zulässiges Zeichen in einem Bezeichner ist.
+    
+4.  1Name ist kein gültiger Bezeichner in Java, da ein Bezeichner mit einer Ziffer beginnt.
+    
+5.  operator ist ein gültiger Bezeichner in Java.
+    
+6.  True ist kein gültiger Bezeichner in Java, da Java eine strikte Groß- und Kleinschreibung hat 
+und das Schlüsselwort true mit kleingeschriebenen Buchstaben geschrieben werden muss.
