@@ -1,0 +1,13 @@
+//Später werden wir sehen, dass man den Inhalt eines chars auch mit einem int repräsentieren
+//kann. Warum ist das denkbar?
+//• Bezeichner
+//– erlaubt: Buchstaben, Ziffern, _, keine Ziffer zu Beginn
+
+
+Um den Inhalt eines char in einen int zu konvertieren, kann man einfach den int-Datentyp verwenden, um den char zu deklarieren. Hier ist ein Beispiel:
+
+char c = 'A'; // ein Charakter 'A'
+int i = c;    // Konvertierung in eine Ganzzahl (ASCII-Code von 'A')
+System.out.println(i); // Ausgabe: 65
+
+
