@@ -1,0 +1,18 @@
+Welchen Wert hat die Variable wert nach jeder Zeile?
+
+1. int wert = 1;
+2. wert += 1;
+3. wert *= 3;
+4. wert -= 2;
+5. wert %= 3;
+
+
+Nach jeder Zeile hat die Variable wert den folgenden Wert:
+
+1.    wert ist 1.
+2.    wert wird um 1 erhöht, daher ist wert jetzt 2.
+3.    wert wird mit 3 multipliziert, daher ist wert jetzt 6.
+4.    wert wird um 2 reduziert, daher ist wert jetzt 4.
+5.    wert wird modulo 3 berechnet, daher ist wert jetzt 1.
+
+Am Ende hat die Variable wert den Wert 1.
