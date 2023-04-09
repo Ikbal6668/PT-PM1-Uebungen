@@ -1,0 +1,11 @@
+Lassen Sie sich den Wert der Variablen auf der Konsole mit Processing
+int stundenImTag = 24;
+anzeigen.
+
+
+int stundenImTag = 24;
+println("Stunden im Tag: " + stundenImTag);
+
+
+
+Ausgabe: Stunden im Tag: 24
