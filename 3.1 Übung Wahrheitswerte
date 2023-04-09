@@ -1,0 +1,30 @@
+Formulieren Sie für die Variablen
+
+int zahl1;
+int zahl2;
+boolean wahrheitswert;
+
+folgenden Ausdruck: zahl1 ist größer als zahl2 und außerdem ist wahrheitswert falsch.
+
+
+– Logische Operatoren: &&, ||, !
+– Wahrheitstabellen
+– logische Ausdrücke
+• Bedingte Anweisungen
+– if
+
+
+
+int zahl1 = 10;
+int zahl2= 5;
+boolean wahrheitswert = false;
+
+if (zahl1 > zahl2 && !wahrheitswert) {
+    println ("zahl1 ist größer als zahl2 und wahrheitswert ist falsch.");
+} else {
+    println("Die Bedingung ist nicht erfüllt.");
+}
+
+Ausgabe:
+
+zahl1 ist größer als zahl2 und wahrheitswert ist falsch.
