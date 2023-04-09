@@ -1,0 +1,34 @@
+Überwachen Sie in Processing, wie sich der Wert der Variablen geld mit jeder Anweisung än-
+dert:
+
+int geld;
+geld = 1;
+geld = -(6 - 8);
+geld = 11%4;
+
+
+– Ausblick -> Ausdrücke, Auswertungsreihenfolge
+• Ganzzahlen
+– Wertebereich
+
+
+
+int geld;
+geld = 1;
+System.out.println("geld: " + geld);
+
+geld = -(6 - 8);
+System.out.println("geld: " + geld);
+
+geld = 11%4;
+System.out.println("geld: " + geld);
+
+Ausgabe:
+
+geld: 1
+geld: 2
+geld: 3
+
+Beachten Sie, dass der Ausdruck - (6 - 8) den Wert 2 ergibt, 
+da 6 - 8 gleich -2 ist und das Vorzeichen - den Wert umkehrt.
+Der Ausdruck 11 % 4 ergibt 3, da es den Rest der Division von 11 durch 4 berechnet.
