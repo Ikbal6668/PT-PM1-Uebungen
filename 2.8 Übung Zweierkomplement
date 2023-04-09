@@ -1,0 +1,38 @@
+Nehmen wir an, wir haben einen Datentyp für Ganzzahlen (positive und negative) mit der Grö-
+ße 4 Bit im Zweierkomplement erschaffen. Welche (Dezimal-)Zahlen können wir damit dar-
+stellen?
+
+
+– Literale
+– unärer Operator -
+– andere Zahlensysteme: Hexadezimal (0x), Oktal (0), Binär (0b)
+
+
+
+Ein Datentyp für Ganzzahlen mit einer Größe von 4 Bit im Zweierkomplement kann Zahlen von -8 bis 7 darstellen.
+Die erste Hälfte der möglichen Werte ist den negativen Zahlen vorbehalten, wobei die größte negative Zahl die komplementäre Darstellung von 8 ist: 1000.
+
+In Java könnte man einen solchen Datentyp zum Beispiel als byte deklarieren. Hier ist ein Beispielprogramm, 
+das die zulässigen Werte für eine 4-Bit-Zahl in Java veranschaulicht:
+
+byte x = 0b0000; // kleinste Zahl
+byte y = 0b0111; // größte positive Zahl
+byte z = (byte) 0b1000; // größte negative Zahl
+
+System.out.println("Kleinste Zahl: " + x);
+System.out.println("Größte positive Zahl: " + y);
+System.out.println("Größte negative Zahl: " + z);
+
+Ausgabe:
+
+Kleinste Zahl: 0
+Größte positive Zahl: 7
+Größte negative Zahl: 8
+
+In diesem Programm haben wir drei Variablen deklariert, die die kleinste Zahl (x),
+die größte positive Zahl (y) und die größte negative Zahl (z) darstellen. 
+Da der maximale Wert einer 4-Bit-Zahl 1111 (dezimal 15) ist und unser Datentyp nur 4 Bit hat, können wir nur Zahlen bis 0111 (dezimal 7) darstellen.
+
+Wenn wir versuchen, eine Zahl zu speichern, die größer als 0111 oder kleiner als 1000 ist,
+wird es einen Überlauf geben und das Ergebnis wird falsch sein.
+
