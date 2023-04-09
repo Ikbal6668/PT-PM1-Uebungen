@@ -1,0 +1,31 @@
+Geben Sie je das Literal für die Dezimalzahl 23 als
+
+1. Hexadezimalzahl
+2. Oktalzahl
+3. Binärzahl
+
+an.
+
+
+1.    Hexadezimalzahl: 0x17
+2.    Oktalzahl: 027
+3.    Binärzahl: 0b10111
+
+Hier sind Beispiele für die Verwendung dieser Literale in Java-Code:
+
+int dezimal = 23;
+int hexadezimal = 0x17;
+int oktal = 027;
+int binär = 0b10111;
+
+println ("Dezimal: " + dezimal);
+println ("Hexadezimal: " + hexadezimal);
+println ("Oktal: " + oktal);
+println ("Binär: " + binär);
+
+Ausgabe:
+
+Dezimal: 23
+Hexadezimal: 23
+Oktal: 23
+Binär: 23
