@@ -1,0 +1,39 @@
+Schreiben Sie in Processing ein Programm in dem deutlich wird, dass die Werte in einem int
+nach oben beschränkt sind.
+
+– Bitfolge
+– Vorzeichenbit: doppelte 0
+– Zweierkomplement
+
+
+int x = 0;
+
+while (x >= 0) {
+  x++;
+  System.out.println("x: " + x);
+}
+
+
+Ausgabe:
+
+x: 1
+x: 2
+x: 3
+...
+x: 2147483646
+x: 2147483647
+x: -2147483648
+x: -2147483647
+x: -2147483646
+...
+
+
+
+In diesem Programm wird eine Schleife ausgeführt, die solange weiterläuft, bis der Wert von x negativ wird.
+In jeder Iteration wird der Wert von x um 1 erhöht und auf der Konsole ausgegeben.
+
+Nach einigen Iterationen wird der Wert von x die obere Grenze von 2147483647 erreichen.
+Sobald der Wert von x diese Grenze erreicht hat, wird er auf -2147483648 zurückgesetzt,
+da Ganzzahlen in Java den Zwei-Komplement-Integer-Darstellungsmodus verwenden.
+In diesem Modus wird der größte positive Wert, der in einem int gespeichert werden kann, durch das Bitmuster 0111 1111 1111 1111 1111 1111 1111 1111 dargestellt0. 
+Wenn ein weiteres Bit hinzugefügt wird, wird der Wert negativ und wird durch das Bitmuster 1000 0000 0000 0000 0000 0000 0000 0000 dargestellt.
