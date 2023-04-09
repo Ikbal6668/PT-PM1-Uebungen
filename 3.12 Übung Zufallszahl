@@ -1,0 +1,11 @@
+while (true) {
+  // Generiere eine Zufallszahl aus dem Bereich [1; 100]
+  int zahl = (int)random(1, 101);
+  
+  // Überprüfe, ob die Zufallszahl ein Vielfaches von 7 ist
+  if (zahl % 7 == 0) {
+    println(zahl + " ist ein Vielfaches von 7!");
+    // Breche die Schleife ab, da wir die gesuchte Zahl gefunden haben
+    break;
+  }
+}
