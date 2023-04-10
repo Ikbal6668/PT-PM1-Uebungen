@@ -1,0 +1,23 @@
+Schreiben Sie ein Testprogramm, das anhand eines Beispiels prüft, ob der Operator / links-
+assoziativ ist.
+
+
+– Klammern
+– Operator +: Addition + Konkatenation
+– weitere Operatoren: Inkrement, Zuweisung
+
+
+int a = 20; 
+int b = 5;
+int c = 2;
+int result = a / b / c;
+println(result);
+
+
+
+Ausgabe:
+
+2
+
+
+
