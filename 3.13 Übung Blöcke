@@ -1,0 +1,36 @@
+Deklarieren Sie zwei Variablen, eine in einem eigenen Block und eine ausserhalb.
+
+
+– break
+
+
+{
+  int a = 5; // Variable a oben deklariert
+  println("a: " + a);
+  
+  for(int i = 0; i < 10; i++) {
+    int b = i * 2; // Variable b innerhalb der Schleife deklariert
+    println("b: " + b);
+    if(i == 5) {
+      break;
+    }
+  }
+  
+  // Variable c ausserhalb des Blocks deklariert
+  int c;
+  c = 10;
+  println("c: " + c);
+}
+
+Ausgabe:
+
+a: 5
+b: 0
+b: 2
+b: 4
+b: 6
+b: 8
+b: 10
+c: 10
+
+
