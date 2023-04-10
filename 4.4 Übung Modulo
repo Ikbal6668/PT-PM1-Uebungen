@@ -1,0 +1,29 @@
+Geben Sie die Ergebnisse der Auswertung folgender Modulo-Ausdrücke an:
+
+1. 4 % 2
+2. 3 % 3
+3. 17 % 5
+4. 5 % 17
+5. -5 % -2
+6. 5 % -2
+7. -5 % 2
+
+
+– Zusammengesetzte Ausdrücke
+
+
+
+
+    1.  Der Ausdruck 4 % 2 ergibt 0, da 4 durch 2 ohne Rest teilbar ist.
+
+    2.  Der Ausdruck 3 % 3 ergibt ebenfalls 0, da 3 durch 3 ohne Rest teilbar ist.
+
+    3.  Der Ausdruck 17 % 5 ergibt 2, da 17 durch 5 nur mit einem Rest von 2 geteilt werden kann.
+
+    4.  Der Ausdruck 5 % 17 ergibt 5, da 5 nicht durch 17 ohne Rest teilbar ist und der Rest der Division 5 beträgt.
+
+    5.  Der Ausdruck -5 % -2 ergibt -1, da -5 bei der Division durch -2 einen Rest von -1 ergibt.
+
+    6.  Der Ausdruck 5 % -2 ergibt 1, da bei der Division von 5 durch -2 ein Rest von 1 verbleibt.
+
+    7.  Der Ausdruck -5 % 2 ergibt -1, da -5 bei der Division durch 2 einen Rest von -1 ergibt.
