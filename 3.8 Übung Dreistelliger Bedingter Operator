@@ -4,3 +4,18 @@ Operator verwenden.
 
 • Schleifen
 – Syntax while, kopfgesteuert
+
+
+
+
+int zahl;
+char buchstabe = 'a';
+
+zahl = (buchstabe == 'a') ? 23 : 43;
+
+print (zahl);
+
+
+Ausgabe: 
+
+23
