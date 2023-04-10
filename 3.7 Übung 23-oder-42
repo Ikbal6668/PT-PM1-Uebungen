@@ -11,10 +11,16 @@ Falls buchstabe den Wert ‘a‘ hat, dann soll Zahl den Wert 23 bekommen, anson
 int zahl;
 char buchstabe = 'a';
 
-zahl = (buchstabe == 'a') ? 23 : 43;
+if (buchstabe == 'a') {
+  zahl = 23;
+} else {
+  zahl = 42;
+}
 
-print (zahl);
+println("Die Zahl ist: " + zahl);
+
+
 
 Ausgabe:
 
-23
+Die Zahl ist 23
