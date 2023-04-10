@@ -1,0 +1,13 @@
+Wo finden Sie hier Wert, Ausdruck und Anweisung?
+boolean ergebnis = 23 < 42;
+
+– Zuweisung: erst Wert berechnen, dann Zuweisung
+• Arithmetische Ausdrücke
+– Grundrechenarten: Addition, Subtraktion, ...
+
+
+
+    Der Wert ist true, da der Ausdruck 23 < 42 wahr ist.
+    Der Ausdruck ist 23 < 42, der den booleschen Wert true zurückgibt.
+    Die Anweisung ist boolean ergebnis = 23 < 42;, die den Wert des 
+    Ausdrucks 23 < 42 der Variablen ergebnis zuweist. Diese Anweisung besteht aus einer Deklaration, einer Initialisierung und einer Zuweisung.
