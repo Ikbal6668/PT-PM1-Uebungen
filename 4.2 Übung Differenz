@@ -1,0 +1,24 @@
+Schreiben Sie Code zum Ausgeben der Differenz zweier Variablen
+int zahl1 = ...;
+int zahl2 = ...;
+
+
+– Division: Ganzzahlige Divisio
+
+
+
+
+int zahl1 = 50;
+int zahl2 = 18;
+
+int differenz = zahl1 - zahl2;
+
+println ("Die Differenz zwischen zahl1 und zahl2 ist: " + differenz);
+
+
+Ausgabe: 
+
+Die Differenz zwischen zahl1 und zahl2 ist: 32
+
+
+
