@@ -1,0 +1,17 @@
+Verändern Sie den Code aus der vorherigen Aufgabe so, dass die Variable den Wert wahr an-
+nimmt, wenn die erste Zahl kleiner oder gleich der zweiten ist.
+
+– teilweise Auswertung
+– else
+
+
+int zahl1 = 5;
+int zahl2 = 10;
+
+boolean größteZahl = (zahl1 <= zahl2);
+
+if (größteZahl) {
+  println ("Die erste Zahl ist kleiner oder gleich der zweiten.");
+} else {
+  println ("Die erste Zahl ist größer als die zweite.");
+}
