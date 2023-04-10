@@ -1,0 +1,23 @@
+Schreiben Sie ein Testprogramm, das anhand eines Beispiels prüft, ob der Operator + eine
+höhere Priorität hat als der Operator %.
+
+
+
+int x = 10;
+int y = 3;
+int z = 2;
+
+int result1 = x + y % z;
+int result2 = (x + y) % z;
+
+println ("Ergebnis 1: " + result1); // Output: 11
+println ("Ergebnis 2: " + result2); // Output: 1
+
+
+
+Ausgabe:
+
+
+Ergebnis 1: 11
+Ergebnis 2: 1
+
