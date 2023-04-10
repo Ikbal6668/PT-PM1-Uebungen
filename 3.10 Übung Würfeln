@@ -1,0 +1,25 @@
+Schreiben Sie ein Programm, dass so lange mit einem sechs-seitigen Würfel (W6) würfelt, bis
+es eine Sechs gewürfelt hat. Verwenden Sie eine do-while-Schleife.
+Erinnerung: int(random(6)) → 0 ... 5
+
+
+– for-Schleife: Initialisierung, Abbruch, Update
+
+
+int wurf;
+
+do {
+  wurf = int(random(6)) + 1;
+  println ("Du hast eine " + wurf + " gewürfelt.");
+} while (wurf != 6);
+println ("Stabil, du hast eine Sechs gewürfelt!");
+
+Mögliche Ausgabe:
+
+
+Du hast eine 1 gewürfelt.
+Du hast eine 4 gewürfelt.
+Du hast eine 6 gewürfelt.
+Stabil, du hast eine Sechs gewürfelt!
+
+
