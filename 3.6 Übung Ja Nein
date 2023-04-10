@@ -1,0 +1,9 @@
+Erstellen Sie ein Programm, das zufällig entweder ja oder nein ausgibt. Hinweis: Eine Zufalls-
+zahl aus [0,1] erzeugen Sie mit: int(random(2)).
+
+
+
+int zufallszahl = (int) random(0, 2);   // erzeugt eine Zufallszahl zwischen 0 und 1, inklusive 0 und ausschließlich 2
+String ergebnis = zufallszahl == 0 ? "ja" : "nein";    // Ternärer Operator, um das Ergebnis als String zu speichern
+println(ergebnis);     // Ausgabe des Ergebnisses
+
