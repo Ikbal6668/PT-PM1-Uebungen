@@ -1,3 +1,13 @@
+Schreiben Sie ein Programm zum Finden einer Zufallszahl aus [1; 100], die ein Vielfaches von
+7 ist. Verwenden Sie zum Abbruch break.
+Hinweis: mit a % b == 0 können Sie feststellen, ob b ein Teiler von a ist.
+
+
+• Blöcke
+– Syntax
+– Sichtbarkeit
+
+
 while (true) {
   // Generiere eine Zufallszahl aus dem Bereich [1; 100]
   int zahl = (int)random(1, 101);
@@ -9,3 +19,8 @@ while (true) {
     break;
   }
 }
+
+
+Mögliche Ausgabe:
+
+Die Zufallszahl 77 ist ein Vielfaches von 7.
