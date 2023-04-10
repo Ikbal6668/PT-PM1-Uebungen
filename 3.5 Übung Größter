@@ -1,0 +1,18 @@
+Erstellen Sie ein Programm, das von drei int-Werten den größten Wert ermittelt und ausgibt.
+
+int zahl1 = 20;
+int zahl2 = 40;
+int zahl3 = 50;
+
+if (zahl1 > zahl2 && zahl1 > zahl3) {
+  println (zahl1 + " ist die größte Zahl");
+} else if (zahl2 > zahl1 && zahl2 > zahl3) {
+  println (zahl2 + " ist die größte Zahl");
+} else {
+  println (zahl3 + " ist die größte Zahl");
+}
+
+
+Ausgabe: 
+
+50 ist die größte Zahl
