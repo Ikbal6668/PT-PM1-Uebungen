@@ -1,0 +1,19 @@
+Berechnen Sie das Ergebnis eines zusammengesetzten Ausdrucks mit zwei verschiedenen
+Operatoren und zwei verschiedenen Operanden.
+
+
+– Operatorenreihenfolge: Priorität + Assoziativität
+
+
+int a = 8;
+int b = 3;
+int c = 2;
+
+int result = a / (b + c);
+
+println (result); 
+
+
+Ausgabe:
+
+1
