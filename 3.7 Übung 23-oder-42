@@ -1,0 +1,20 @@
+Gegeben sind zwei Variablen
+int zahl;
+char buchstabe = ...;
+Falls buchstabe den Wert ‘a‘ hat, dann soll Zahl den Wert 23 bekommen, ansonsten den Wert
+42.
+
+
+– dreistelliger, bedingter Operator
+
+
+int zahl;
+char buchstabe = 'a';
+
+zahl = (buchstabe == 'a') ? 23 : 43;
+
+print (zahl);
+
+Ausgabe:
+
+23
