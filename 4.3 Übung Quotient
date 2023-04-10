@@ -1,0 +1,18 @@
+Schreiben Sie ein Programm, das den Quotienten aus 42 und 23 berechnet und ausgibt.
+
+– Modulo a % b = a – (a / b) * b
+
+
+
+
+int zahl1 = 42;
+int zahl2 = 23;
+
+double quotient = (double)zahl1 / (double)zahl2;
+
+println ("Der Quotient von " + zahl1 + " und " + zahl2 + " ist: " + quotient);
+
+
+Ausgabe:
+
+Der Quotient von 42 und 23 ist: 1.826086956521739
