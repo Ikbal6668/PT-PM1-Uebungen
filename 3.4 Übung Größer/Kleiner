@@ -1,0 +1,5 @@
+3.4 Übung Größer/Kleiner
+Schreiben Sie Code, der größer ausgibt, wenn die Zahl
+int zahl = ...
+größer als 0 ist, und ansonsten kleiner ausgibt.
+– Schachtelung
