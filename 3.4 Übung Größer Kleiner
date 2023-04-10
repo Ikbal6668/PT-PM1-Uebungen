@@ -1,0 +1,19 @@
+Schreiben Sie Code, der größer ausgibt, wenn die Zahl
+int zahl = ...
+größer als 0 ist, und ansonsten kleiner ausgibt.
+
+– Schachtelung
+
+
+int zahl1 = 10;
+
+if (zahl1 > 0); {
+println ("größer als 0");
+} else {
+println ("kleiner als 0");
+}
+
+
+Ausgabe:
+
+größer als 0
