@@ -1,0 +1,28 @@
+Schreiben Sie eine while-Schleife, die einen Zähler von 5 bis 0 nach unten zählt und jede Zahl
+dabei ausgibt.
+
+
+– do-while-Schleife, fußgesteuert
+
+
+
+int counter = 5;
+
+do {
+  println ("Wir zählen runter: " + counter);
+  counter--;
+}
+while (counter >= 0);
+  println ("ENDE");
+
+
+
+Ausagabe:
+
+Wir zählen runter: 5
+Wir zählen runter: 4
+Wir zählen runter: 3
+Wir zählen runter: 2
+Wir zählen runter: 1
+Wir zählen runter: 0
+ENDE
