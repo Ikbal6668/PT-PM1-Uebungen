@@ -1,0 +1,12 @@
+Gegeben sind zwei int-Variablen für Zahlen. Deklarieren und initialisieren Sie eine boolean-
+Variable, die wahr ist, wenn die erste Zahl größer als die zweite ist.
+
+
+
+
+int zahl1 = 20;
+int zahl2 = 10;
+
+boolean größteZahl = zahl1 > zahl2;
+
+println ("Ist die erste Zahl größer als die zweite? " + größteZahl);
