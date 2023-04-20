@@ -1,0 +1,23 @@
+Schreiben Sie ein Programm, das die Gleichheit einer double-Zahl prüft, die durch zwei ver-
+schiedene Literale gegeben ist.
+
+– Polymorphie
+
+
+
+
+double d1 = 3.14159;
+    double d2 = 3.1415900000000001;
+    
+    if ((d1 ==d2)) {
+      System.out.println("The two doubles are equal.");
+    } else {
+      System.out.println("The two doubles are not equal.");
+    }
+    
+    
+    
+Ausgabe:
+
+
+The two doubles are equal.
