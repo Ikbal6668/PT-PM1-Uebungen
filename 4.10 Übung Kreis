@@ -1,0 +1,26 @@
+Schreiben Sie ein Programm, das einen Kreis mit dem Mittelpunkt Stelle (50, 50) mit einem
+vorgegebenen (Variable) Umfang zeichnet. Die Kreiszahl π erhalten Sie so:
+float umfangKreis = 200;
+float PI = (float)Math.PI;
+
+• Kompatibilität
+– Zuweisung Wert auf Variable
+– Implizite Typumwandlung
+
+
+ 
+  size(200, 200);
+  
+  // Festlegung des Umfangs des Kreises auf 200 und Zuweisung an eine Variable
+  float umfangKreis = 200;
+  
+  // Festlegung der Kreiszahl Pi durch die Verwendung der Math.PI-Konstante
+  // und explizite Typumwandlung in float, um es der Variable PI zuzuweisen
+  float PI = (float)Math.PI;
+  
+  // Berechnung des Radius des Kreises durch Umstellung der Formel U = 2 * Pi * r
+  // auf r = U / (2 * Pi) und Zuweisung an eine Variable
+  float radius = umfangKreis / (2 * PI);
+  
+  // Zeichnung eines Kreises mit dem Mittelpunkt (50, 50) und der Größe (radius * 2, radius * 2)
+  ellipse(50, 50, radius * 2, radius * 2);
