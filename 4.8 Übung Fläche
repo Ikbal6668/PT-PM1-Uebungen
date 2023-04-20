@@ -1,0 +1,25 @@
+Schreiben Sie ein Programm, das für eine gegebene Fläche und eine gegebene Breite ein Recht-
+eck an der Stelle (100, 100) zeichnet. Gegeben bedeutet, dass die Werte in Variablen vorliegen:
+int breite = 23;
+int flaeche = 800;
+
+• Gleitkommazahlen
+– Datentypen float und double, Genauigkeit
+– Literale
+
+
+
+
+
+int breite = 23;
+int flaeche = 800;
+
+
+  size(400, 400); // Größe des Fensters
+  
+  fill(0, 0, 255); // Blaue Füllfarbe
+  rect(100, 100, flaeche/breite, breite); /*Die ersten 2 Zahlen (100, 100) = Position (x,y-Koordinaten) der 
+  oberen linken Ecke des Rechtecks. Die Breite des Rechtecks ist flaeche/breite, was bedeutet,
+  dass sie durch Teilen der Gesamtfläche durch die Breite berechnet wird. Die Höhe des Rechtecks ist einfach die gegebene Breite breite.*/
+
+
