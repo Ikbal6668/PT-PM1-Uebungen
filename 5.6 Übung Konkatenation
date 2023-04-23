@@ -1,0 +1,25 @@
+Schreiben Sie eine neue Variante der letzten Version von alarm() bei der die Konkatenation der
+beiden Texte nicht nur ausgegeben sondern auch zurückgegeben wird.
+
+• Auswerten von Argument-Ausdrücken
+
+
+String alarm(String text1, String text2) {
+  String alarmText = text1 + " " + text2;
+  println(alarmText); // Ausgabe des Konkatenationsergebnisses
+  return alarmText; // Rückgabe des Konkatenationsergebnisses
+}
+
+void setup() {
+  
+  // Beispielaufruf von alarm()
+  alarm("Feuer", "im Gebäude");
+}
+
+void draw() {
+  // leere draw()-Funktion
+}
+
+Ausgabe:
+
+Feuer im Gebäude
