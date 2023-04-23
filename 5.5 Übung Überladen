@@ -1,0 +1,27 @@
+Schreiben Sie eine überladene Variante der Prozedur alarm(), der zwei Zeichenketten übergeben
+werden, die dann hintereinander gehängt ausgegeben werden.
+
+• Rückgabe: Signatur + Return, void
+
+
+
+String alarm(String text1, String text2) {
+  String alarmText = text1 + " " + text2;
+  return alarmText;
+}
+
+void setup() {
+  
+  
+  // Beispielaufruf von alarm() mit Rückgabe
+  String alarmText = alarm("Feuer", "im Gebäude");
+  println(alarmText);
+}
+
+void draw() {
+  // leere draw()-Funktion
+}
+
+Ausgabe:
+
+Feuer im Gebäude
