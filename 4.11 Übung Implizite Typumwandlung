@@ -1,0 +1,23 @@
+Deklarieren Sie zwei Variablen und weisen sie ihnen je einen Wert zu. Bei einer Zuweisung soll
+eine implizite Typumwandlung stattfinden. Die zweite Zuweisung soll wegen Inkompatibilität
+fehlschlagen.
+
+
+– Explizite Typumwandlung
+
+
+
+void setup() {
+  // Deklaration und Initialisierung von Variablen
+  int a = 10;
+  float b = 3.14;
+  
+  // Implizite Typumwandlung
+  float c = a; // int wird in float implizit umgewandelt
+  
+  // Explizite Typumwandlung
+  int d = (int) b; // float wird in int explizit umgewandelt
+  
+  // Fehlschlagende Zuweisung wegen Inkompatibilität
+  // int e = "Hallo"; // String kann nicht in int umgewandelt werden
+}
