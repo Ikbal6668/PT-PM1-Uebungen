@@ -1,0 +1,5 @@
+Schreiben Sie eine Prozedur negiere(int x), die den negativen Wert der Zahl x zurückgibt. Die Pro-
+zedur erlaubt nur Eingaben > 0.
+
+• Dokumentation: Kommentare
+
