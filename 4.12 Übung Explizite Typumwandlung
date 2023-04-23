@@ -1,0 +1,13 @@
+Verwenden Sie bei der fehlgeschlagenen Zuweisung aus der vorherigen Aufgabe einen expli-
+ziten Typecast
+
+
+void setup() {
+  // Fehlschlagende Zuweisung wegen Inkompatibilität
+  // int e = "Hallo"; // String kann nicht in int umgewandelt werden
+  
+  // Explizite Typumwandlung mit Typecast
+  int e = (int) "123"; // String wird in int explizit umgewandelt
+  
+  println(e); // Ausgabe: 123
+}
