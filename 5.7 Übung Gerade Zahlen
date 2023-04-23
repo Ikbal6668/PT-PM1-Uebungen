@@ -1,0 +1,47 @@
+Schreiben Sie zwei Prozeduren istGerade() und geradeZahlenAusgeben(). Die erste Prozedur
+erhält eine Ganzzahl und liefert wahr, wenn diese gerade ist. Die zweite bekommt eine Ganzzahl n
+> 1 und gibt dann mit Hilfe der ersten alle ganzen zwischen 1 und n aus.
+
+• Code-Qualität
+• Variablen-Sorten: lokal, global, Objektvariablen
+• Parameterprüfung
+
+
+
+void setup() {
+  int n = 10;
+  
+  // Testen der istGerade() Prozedur
+  int zahl = 5;
+  if (istGerade(zahl)) {
+    println(zahl + " ist gerade");
+  } else {
+    println(zahl + " ist ungerade");
+  }
+  
+  // Testen der geradeZahlenAusgeben() Prozedur
+  geradeZahlenAusgeben(n);
+}
+
+// Überprüft, ob eine Ganzzahl gerade ist
+boolean istGerade(int zahl) {
+  return zahl % 2 == 0;
+}
+
+// Gibt alle geraden Zahlen zwischen 1 und n aus
+void geradeZahlenAusgeben(int n) {
+  for (int i = 1; i <= n; i++) {
+    if (istGerade(i)) {
+      println(i);
+    }
+  }
+}
+
+Ausgabe:
+
+5 ist ungerade
+2
+4
+6
+8
+10
