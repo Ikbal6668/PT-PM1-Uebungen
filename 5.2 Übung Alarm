@@ -1,0 +1,32 @@
+Rufen Sie die Prozedur alarm() aus der vorherigen Aufgabe auf.
+
+• Parameter und Argumente
+
+
+
+
+void setup() {
+  // Aufrufen der Prozedur alarm() ohne Argumente
+  alarm();
+  
+  // Aufrufen der Prozedur alarm() mit einem String-Argument
+  String message = "Achtung, Feuer!";
+  alarm(message);
+}
+
+void alarm() {
+  // Prozedur ohne Parameter, die "Feuer" ausgibt
+  println("Feuer");
+}
+
+void alarm(String message) {
+  // Prozedur mit einem String-Parameter, der die übergebene Nachricht ausgibt
+  println(message);
+}
+
+
+Ausgabe:
+
+
+Feuer
+Achtung, Feuer!
