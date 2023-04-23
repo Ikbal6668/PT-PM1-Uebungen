@@ -1,0 +1,33 @@
+Schreiben Sie eine Prozedur zeichneQuadrat(). Die Prozedur hat drei Parameter: die vertikale Po-
+sition, die horizontale Position und die Seitenlänge. Verwenden Sie aus der Processing-Bibliothek
+ausschließlich die Prozedur line(startX, startY, endX, endY).
+
+• Überlade
+
+
+void setup() {
+  size(400, 400); // Erstellen des Zeichenbereichs
+  background(255); // Hintergrundfarbe festlegen
+  
+  // Aufruf der Prozedur zeichneQuadrat() mit verschiedenen Argumenten
+  zeichneQuadrat(50, 50, 100);
+  zeichneQuadrat(150, 100, 50);
+}
+// Quadrat 1
+void zeichneQuadrat(int posX, int posY, int seitenlaenge) {
+  // Prozedur, die ein Quadrat mit gegebener Position und Seitenlänge zeichnet
+  line(posX, posY, posX + seitenlaenge, posY);
+  line(posX + seitenlaenge, posY, posX + seitenlaenge, posY + seitenlaenge);
+  line(posX + seitenlaenge, posY + seitenlaenge, posX, posY + seitenlaenge);
+  line(posX, posY + seitenlaenge, posX, posY);
+}
+// Quadrat 2
+void zeichneQuadrat(float posX, float posY, float seitenlaenge) {
+  // Überladene Prozedur, die ein Quadrat mit gegebener Position und Seitenlänge zeichnet
+  line(posX, posY, posX + seitenlaenge, posY);
+  line(posX + seitenlaenge, posY, posX + seitenlaenge, posY + seitenlaenge);
+  line(posX + seitenlaenge, posY + seitenlaenge, posX, posY + seitenlaenge);
+  line(posX, posY + seitenlaenge, posX, posY);
+}
+
+
