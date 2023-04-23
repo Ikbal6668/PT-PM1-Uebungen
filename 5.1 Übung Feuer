@@ -1,0 +1,32 @@
+Schreiben Sie eine Prozedur alarm(), die "Feuer" ausgibt.
+
+• Processing: Game-Loop (setup() + draw())
+• Aufrufen, Call-Sequence
+
+
+
+void setup() {
+  // Leere setup-Methode, da keine initialen Einstellungen erforderlich sind
+}
+
+void draw() {
+  // Leere draw-Methode, da wir keine Animation benötigen
+}
+
+void alarm() {
+  // Gibt den String "Feuer" auf der Konsole aus
+  println("Feuer");
+}
+
+void keyPressed() {
+  // Wenn die Taste "a" gedrückt wird, rufen wir die alarm-Methode auf
+  if (key == 'a') {
+    alarm();
+  }
+}
+
+
+Mögliche Ausgabe:
+
+Feuer
+Feuer
