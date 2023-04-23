@@ -1,0 +1,22 @@
+Erweitern Sie die Prozedur alarm() so, dass der Text, der ausgegeben werden soll, übergeben wird
+(Typ String).
+
+
+
+void setup() {
+  // Aufrufen der Prozedur alarm() mit einem String-Argument
+  alarm("Achtung, Feuer!");
+}
+
+void alarm() {
+  // Prozedur ohne Parameter, die "Feuer" ausgibt
+  println("Feuer");
+}
+
+void alarm(String message) {
+  // Prozedur mit einem String-Parameter, der die übergebene Nachricht ausgibt
+  println(message);
+}
+
+Ausgabe:
+Achtung, Feuer!
