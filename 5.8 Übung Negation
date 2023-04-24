@@ -3,3 +3,38 @@ zedur erlaubt nur Eingaben > 0.
 
 • Dokumentation: Kommentare
 
+
+/**
+ * Diese Methode gibt den negativen Wert einer positiven Eingabezahl zurück.
+ * Wenn die Eingabezahl negativ oder Null ist, wird eine Fehlermeldung ausgegeben.
+ */
+public void negiere() {
+  int x = int(key) - 48; // den ASCII-Wert von '0' abziehen, um den Wert von 'x' zu erhalten
+  if (x <= 0) { // Überprüfen, ob die Eingabezahl größer als Null ist
+    println("Fehler: Die Eingabezahl muss größer als Null sein!");
+  } else {
+    int neg = -x; // Negativen Wert der Eingabezahl berechnen
+    println("Der negative Wert von " + x + " ist " + neg);
+  }
+}
+
+void setup() {
+  // Processing-Einstellungen
+}
+
+void draw() {
+  // Processing-Code
+}
+
+void keyPressed() {
+  if (key >= '0' && key <= '9') { // Überprüfen, ob die gedrückte Taste eine Zahl ist
+    negiere(); // Die negiere() Methode aufrufen, um den negativen Wert zu berechnen
+  }
+}
+
+Mögliche Ausgabe:
+
+Der negative Wert von 5 ist -5
+Der negative Wert von 1 ist -1
+Fehler: Die Eingabezahl muss größer als Null sein!
+
