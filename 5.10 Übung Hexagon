@@ -1,0 +1,50 @@
+Schreiben Sie eine Prozedur void zeichneHexagon(int x, int y, float radius), die ein
+Sechseck mit Mittelpunkt (x, y) und dem Radius radius zeichnet. Schreiben Sie dazu zunächst
+zwei Hilfsprozeduren float getHexX(int index) und float getHexY(int index), die die x-
+und die y-Koordinate des Eckpunktes mit dem Index index berechnen. Hinweise: Für Sinus und Ko-
+sinus gibt es in Processing bereits die vordefinierten Prozeduren sin() und cos(). Diese arbeiten
+im Bogenmaß. Die Konstante π heißt in Processing PI.
+
+
+
+void setup() {
+  size(500, 500);
+  zeichneHexagon(200, 200, 150);
+}
+
+void draw(){
+}
+
+/**
+ * Übung 5.10
+ * Zeichnet ein Hexagon an der Stelle (x,y) mit dem angegebenen Radius.
+ */
+void zeichneHexagon(int x, int y, float radius) {
+  for (int i = 0; i < 6; i++) {
+    float xStart = getHexX(i)*radius + x;
+    float yStart = getHexY(i)*radius + y;
+    float xEnde = getHexX((i+1)%6)*radius + x;
+    float yEnde = getHexY((i+1)%6)*radius + y;
+    line(xStart, yStart, xEnde, yEnde);
+  }
+}
+
+/**
+ * Berechnet die x-Koordinate des indexten Expunktes
+ */
+float getHexX(int index) {
+  float alpha = index * 60 * PI /180.0f;
+  float x = cos(alpha);
+  return x;
+}
+
+/**
+ * Berechnet die y-Koordinate des indexten Expunktes
+ */
+float getHexY(int index) {
+  float alpha = index * 60 * PI /180.0f;
+  float y = sin(alpha);
+  return y;
+}
+
+
