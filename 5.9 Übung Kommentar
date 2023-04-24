@@ -1,0 +1,25 @@
+Ergänzen Sie einen passenden Kommentar für die Prozedur negiere(int x).
+
+• DRY-Prinzip
+• KISS-Prinzip
+
+
+/**
+ * Diese Methode gibt den negativen Wert einer positiven Eingabezahl zurück.
+ * Wenn die Eingabezahl negativ oder Null ist, wird eine Fehlermeldung ausgegeben.
+ *
+ * DRY-Prinzip: Die Methode ist einfach und wiederholbar, da sie nur eine Aufgabe hat
+ * und die Bedingungen zur Überprüfung der Eingabezahl klar definiert sind.
+ *
+ * KISS-Prinzip: Die Methode ist einfach gehalten und erfüllt nur eine Aufgabe,
+ * ohne unnötigen Code oder komplexe Bedingungen hinzuzufügen.
+ */
+public void negiere() {
+  int x = int(key) - 48; // den ASCII-Wert von '0' abziehen, um den Wert von 'x' zu erhalten
+  if (x <= 0) { // Überprüfen, ob die Eingabezahl größer als Null ist
+    println("Fehler: Die Eingabezahl muss größer als Null sein!");
+  } else {
+    int neg = -x; // Negativen Wert der Eingabezahl berechnen
+    println("Der negative Wert von " + x + " ist " + neg);
+  }
+}
