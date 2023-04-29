@@ -1,0 +1,47 @@
+Zeichnen Sie ein Diagramm, das das Verhalten einer while-Schleife beschreibt. Wie könnte im
+Vergleich das Diagramm einer do-while-Schleife aussehen?
+
+– Teile + Herrsche, Wunschdenken
+• Debugging
+– Tracing
+
+
+Beispiel für eine while-Schleife:
+
+void setup() {
+  size(400, 400);  // Größe des Fensters setzen
+  background(255); // Hintergrundfarbe weiß
+  stroke(0);       // Farbe des Strichs auf schwarz setzen
+  int x = 50;      // Startposition für x setzen
+  int y = height - 50; // Startposition für y setzen (am unteren Rand des Fensters)
+  int count = 0;   // Zähler initialisieren
+  while (count < 10) {   // while-Schleife, die 10-mal ausgeführt wird
+    rect(x, y, 20, -count*10); // Ein Rechteck zeichnen, um das Wachstum der Schleife zu zeigen
+    x += 30;        // x-Position für das nächste Rechteck erhöhen
+    count++;        // Zähler erhöhen
+  }
+}
+
+
+
+
+Beispiel für eine do-while-Schleife:
+
+void setup() {
+  size(400, 400);  // Größe des Fensters setzen
+  background(255); // Hintergrundfarbe weiß
+  stroke(0);       // Farbe des Strichs auf schwarz setzen
+  int x = 50;      // Startposition für x setzen
+  int y = height - 50; // Startposition für y setzen (am unteren Rand des Fensters)
+  int count = 0;   // Zähler initialisieren
+  do {             // do-while-Schleife, die mindestens einmal ausgeführt wird
+    rect(x, y, 20, -count*10); // Ein Rechteck zeichnen, um das Wachstum der Schleife zu zeigen
+    x += 30;        // x-Position für das nächste Rechteck erhöhen
+    count++;        // Zähler erhöhen
+  } while (count < 10);    // Schleife ausführen, solange der Zähler kleiner als 10 ist
+}
+
+
+Ausgabe: 
+
+Es kommen die selben Diagramme bei raus
