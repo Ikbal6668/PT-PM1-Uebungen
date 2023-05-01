@@ -1,0 +1,21 @@
+Formulieren Sie die Anforderungen (hier Spezifikation) zu einer Prozedur, die den Betrag einer
+Ganzzahl berechnet.
+
+
+
+Die Spezifikation für eine Prozedur, die den Betrag einer Ganzzahl berechnet, könnte wie folgt lauten:
+
+1. Die Prozedur hat einen Parameter `zahl`, der eine Ganzzahl ist.
+2. Die Prozedur berechnet den Betrag der übergebenen Zahl.
+3. Der Betrag der Zahl wird als Ergebnis zurückgegeben.
+4. Wenn die übergebene Zahl negativ ist, wird der Betrag als positive Zahl zurückgegeben.
+5. Wenn die übergebene Zahl positiv oder Null ist, wird der Betrag als diese Zahl zurückgegeben.
+
+
+int betrag(int zahl) {
+  if (zahl < 0) {
+    return -zahl;
+  } else {
+    return zahl;
+  }
+}
