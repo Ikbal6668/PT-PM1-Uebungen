@@ -1,0 +1,37 @@
+Schreiben Sie eine Prozedur primfaktorzerlegung(int), die alle Teiler einer Zahl auf der
+Konsole ausgibt. Verwenden Sie die Prozedur kleinsterTeiler(int) aus der vorherigen
+Aufgabe.
+Beispiel: primfaktorzerlegung(30) gibt 2, 3 und 5 aus
+
+– Debugger: Haltepunkt, Schritt, Weiter
+• Testen
+– Korrektheit, statisch vs. dynamisch
+– Soll vs. Ist
+
+
+
+void primfaktorzerlegung(int zahl) {
+  int teiler = 2;
+  while (zahl > 1) {
+    if (zahl % teiler == 0) {
+      // Wenn die Zahl durch den aktuellen Teiler teilbar ist, geben wir ihn aus.
+      println(teiler);
+      // Wir teilen die Zahl durch den Teiler, um die nächste Iteration zu starten.
+      zahl /= teiler;
+    } else {
+      // Wenn der aktuelle Teiler kein Teiler ist, erhöhen wir ihn um 1.
+      teiler++;
+    }
+  }
+}
+
+// In der "setup" Funktion rufen wir die "primfaktorzerlegung" Funktion mit dem Argument 30 auf und generieren eine Ausgabe auf der Konsole.
+void setup() {
+  primfaktorzerlegung(30);
+}
+
+
+Ausgabe:
+2
+3
+5
