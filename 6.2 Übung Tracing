@@ -1,0 +1,40 @@
+Schreiben Sie eine Prozedur, die die kleinste Zahl findet, die ein Teiler einer vorgegebenen
+Zahl ist. Verwenden Sie Tracing, um die Zwischenschritte auszugeben.
+Beispiel: kleinsterTeiler(35) liefert 5, weil 35 = 5 * 7.
+
+
+// Die "kleinsterTeiler" Funktion sucht den kleinsten Teiler der übergebenen Zahl.
+void kleinsterTeiler(int zahl) {
+  // Wir beginnen bei 2, da jede Zahl durch 1 teilbar ist.
+  int teiler = 2;
+  
+  // Solange die Zahl nicht durch den aktuellen Teiler teilbar ist, erhöhen wir den Teiler um 1.
+  while (zahl % teiler != 0) {
+    // Wir geben eine Nachricht aus, die den aktuellen Teiler und die übergebene Zahl enthält.
+    trace("Teiler " + teiler + " ist kein Teiler von " + zahl + ".");
+    
+    // Wir erhöhen den Teiler um 1 und suchen weiter.
+    teiler++;
+  }
+  
+  // Wenn die Zahl durch den Teiler teilbar ist, haben wir den kleinsten Teiler gefunden.
+  trace("Kleinster Teiler von " + zahl + " ist " + teiler + ".");
+}
+
+// Die "trace" Funktion gibt eine Nachricht auf der Konsole aus.
+void trace(String message) {
+  println("Trace: " + message);
+}
+
+// In der "setup" Funktion rufen wir die "kleinsterTeiler" Funktion mit dem Argument 35 auf und generieren eine Ausgabe auf der Konsole.
+void setup() {
+  kleinsterTeiler(35);
+}
+
+
+
+Ausgabe: 
+Trace: Teiler 2 ist kein Teiler von 35.
+Trace: Teiler 3 ist kein Teiler von 35.
+Trace: Teiler 4 ist kein Teiler von 35.
+Trace: Kleinster Teiler von 35 ist 5.
