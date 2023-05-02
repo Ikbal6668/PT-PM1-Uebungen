@@ -1,0 +1,105 @@
+Schreiben Sie eine Prozedur
+float nullstelle(float a, float b, float c),
+die die erste (kleinere) Nullstelle einer quadratischen Funktion der Form ax2+bx+c berechnet
+und zurückgibt. Denken Sie an die verschiedenen Sonderfälle, etwa wenn es keine Nullstellen
+gibt oder die Funktion nicht quadratisch (a = 0) oder gar konstant (a = 0 und b = 0) ist. Falls
+es keine Nullstelle gibt, geben Sie Float.NaN zurück. Zum Test auf diesen Wert verwenden
+Sie Float.isNaN().
+Schreiben Sie eine Testprozedur für nullstelle().
+
+– Bestandteil der SW-Entwicklung
+– System-, Integration-, Unit-Tests
+– Basis: Spezifikation + Prozedur-Signatur
+– Testen von
+* Rückgabe
+* Zustand
+• Äquivalenzklassen, Testabdeckung
+– vergleichbares Verhalten bezüglich Eingabe
+
+
+
+void setup() {
+  testeNullstelle();
+  exit();
+}
+
+float nullstelle(float a, float b, float c) {
+  // Sonderfall: a = 0
+  if (a == 0) {
+    // lineare Funktion
+    if (b == 0) {
+      // konstante Funktion
+      return Float.NaN;
+    } else {
+      // keine quadratische Funktion
+      return -c / b;
+    }
+  } else {
+    // Diskriminante berechnen
+    float diskriminante = b * b - 4 * a * c;
+    
+    // Sonderfall: keine Nullstelle
+    if (diskriminante < 0) {
+      return Float.NaN;
+    }
+    
+    // Quadratische Formel anwenden
+    float x1 = (-b - sqrt(diskriminante)) / (2 * a);
+    float x2 = (-b + sqrt(diskriminante)) / (2 * a);
+    
+    // Die erste (kleinere) Nullstelle zurückgeben
+    return min(x1, x2);
+  }
+}
+
+void testeNullstelle() {
+  boolean alleTestsErfolgreich = true;
+  
+  // Testfall 1: Quadratische Funktion mit zwei Nullstellen
+  float a = 1;
+  float b = -3;
+  float c = 2;
+  float erwartet = 1;
+  float tatsaechlich = nullstelle(a, b, c);
+  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
+  
+  // Testfall 2: Quadratische Funktion mit einer Nullstelle
+  a = 1;
+  b = -2;
+  c = 1;
+  erwartet = 1;
+  tatsaechlich = nullstelle(a, b, c);
+  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
+  
+  // Testfall 3: Quadratische Funktion ohne Nullstellen
+  a = 2;
+  b = 1;
+  c = 3;
+  erwartet = Float.NaN;
+  tatsaechlich = nullstelle(a, b, c);
+  alleTestsErfolgreich = alleTestsErfolgreich && Float.isNaN(tatsaechlich);
+  
+  // Testfall 4: Konstante Funktion
+  a = 0;
+  b = 0;
+  c = 5;
+  erwartet = Float.NaN;
+  tatsaechlich = nullstelle(a, b, c);
+  alleTestsErfolgreich = alleTestsErfolgreich && Float.isNaN(tatsaechlich);
+  
+  // Testfall 5: Lineare Funktion
+  a = 0;
+  b = 2;
+  c = 3;
+  erwartet = -c / b;
+  tatsaechlich = nullstelle(a, b, c);
+  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
+  
+  // Ergebnis ausgeben
+  println(alleTestsErfolgreich ?
+          "Alle Tests erfolgreich." :
+          "Mindestens ein Test fehlgeschlagen.");
+}
+
+Ausgabe:
+Alle Tests erfolgreich.
