@@ -1,0 +1,45 @@
+Schreiben Sie eine Test-Hilfsprozedur testeDouble() zum Abgleich von double-Werten
+
+
+
+void setup() {
+  // Die setup()-Funktion wird einmal aufgerufen, um die Tests auszuführen
+  testeDouble();
+  
+  // Das Programm wird mit der exit()-Funktion beendet, um zu verhindern,
+  // dass weitere Ausgaben in der Konsole erscheinen
+  exit();
+}
+
+void testeDouble() {
+  // Initialisieren eines booleschen Ausdrucks, der angibt, ob alle Tests erfolgreich waren
+  boolean alleTestsErfolgreich = true;
+  
+  // Testfall 1: Vergleiche erwarteten und tatsächlichen Wert
+  double erwartet = 2.5;
+  double tatsaechlich = 2.5;
+  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
+  
+  // Testfall 2: Vergleiche erwarteten und tatsächlichen Wert mit einem Toleranz-Delta
+  erwartet = 3.14159;
+  tatsaechlich = 3.14;
+  double delta = 0.01;
+  alleTestsErfolgreich = alleTestsErfolgreich && (Math.abs(tatsaechlich - erwartet) < delta);
+  
+  // Testfall 3: Vergleiche erwarteten und tatsächlichen Wert mit einem größeren Toleranz-Delta
+  erwartet = 100.0;
+  tatsaechlich = 99.99;
+  delta = 0.1;
+  alleTestsErfolgreich = alleTestsErfolgreich && (Math.abs(tatsaechlich - erwartet) < delta);
+  
+  // Prüfe, ob alle Tests erfolgreich waren und gib eine entsprechende Meldung aus
+ println(alleTestsErfolgreich ?
+    "Alle Tests erfolgreich." :
+    "Mindestens ein Test fehlgeschlagen.");
+  }
+  
+  
+  Ausgabe:
+  Alle Tests erfolgreich
+  
+  
