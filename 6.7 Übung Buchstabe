@@ -1,0 +1,56 @@
+Schreiben Sie eine Test-Prozedur mit mindestens einem Testfall:
+/**
+* Liefert für einen Buchstaben den Index aus 1 ... 26
+* aus dem Alphabet.
+*/
+int buchstabeAusAlphabet(char zeichen) {
+return zeichen - ’a’ + 1;
+}
+Hinweis: Ein char beschreibt ein Zeichen, beispielsweise einen Buchstaben: ’a’ oder ’g’.
+
+
+void setup() {
+  // Die setup()-Funktion wird einmal aufgerufen, um die Tests auszuführen
+  testeBuchstabeAusAlphabet();
+  
+  // Das Programm wird mit der exit()-Funktion beendet, um zu verhindern,
+  // dass weitere Ausgaben in der Konsole erscheinen
+  exit();
+}
+
+
+
+void testeBuchstabeAusAlphabet() {
+  // Initialisieren eines booleschen Ausdrucks, der angibt, ob alle Tests erfolgreich waren
+  boolean alleTestsErfolgreich = true;
+  
+  // Testfall 1: Überprüfe, ob der Buchstabe 'a' den Index 1 liefert
+  char buchstabe = 'a';
+  int erwartet = 1;
+  int tatsaechlich = buchstabeAusAlphabet(buchstabe);
+  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
+  
+  // Testfall 2: Überprüfe, ob der Buchstabe 'z' den Index 26 liefert
+  buchstabe = 'z';
+  erwartet = 26;
+  tatsaechlich = buchstabeAusAlphabet(buchstabe);
+  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
+  
+  // Prüfe, ob alle Tests erfolgreich waren und gib eine entsprechende Meldung aus
+  println(alleTestsErfolgreich ?
+    "Alle Tests erfolgreich." :
+    "Mindestens ein Test fehlgeschlagen.");
+}
+
+/**
+ * Liefert für einen Buchstaben den Index aus 1 ... 26
+ * aus dem Alphabet.
+ */
+int buchstabeAusAlphabet(char zeichen) {
+  return zeichen - 'a' + 1;
+}
+
+
+Ausgabe:
+Alle Tests erfolgreich.
+
