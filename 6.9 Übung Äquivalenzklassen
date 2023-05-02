@@ -1,0 +1,36 @@
+Was sind die Äquivalenzklassen beim Testen folgender Prozedur?
+
+/**
+* Liefert den Betrag einer Zahl zurück.
+*/
+int betrag(int zahl) {
+if ( zahl < 0 ) {
+return -zahl;
+} else if (zahl > 0 ) {
+return zahl;
+} else {
+return 0;
+}
+}
+
+
+– Rand
+– je mindestens einen Repräsentanten
+– Testabdeckung
+
+
+
+
+Die Äquivalenzklassen bei dieser Prozedur sind:
+
+1. Positiver Eingabewert: eine positive Zahl, z.B. 5
+2. Negativer Eingabewert: eine negative Zahl, z.B. -5
+3. Null als Eingabewert: die Zahl 0
+
+Um alle möglichen Fälle abzudecken, müssen wir mindestens je einen Testfall aus jeder Äquivalenzklasse haben:
+
+1. Testfall mit Eingabewert 5: erwartete Ausgabe ist 5
+2. Testfall mit Eingabewert -5: erwartete Ausgabe ist 5
+3. Testfall mit Eingabewert 0: erwartete Ausgabe ist 0
+
+
