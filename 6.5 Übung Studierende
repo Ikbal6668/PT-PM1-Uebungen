@@ -1,0 +1,17 @@
+Geben Sie (mindestens) drei Soll-Eigenschaften eines regulär immatrikulierten Studierenden
+an der HAW Hamburg an.
+
+
+Soll-Eigenschaften (Soll und Ist in Java) eines regulär immatrikulierten Studierenden an der HAW Hamburg könnten folgendermaßen lauten:
+
+1. Gültige Immatrikulationsbescheinigung: 
+   - Soll: Ein regulär immatrikulierter Studierender muss eine gültige Immatrikulationsbescheinigung besitzen.
+   - Ist in Java: Überprüfung der Gültigkeit der Immatrikulationsbescheinigung durch Abfrage der immatrikulationsrelevanten Daten aus dem zentralen Studierendenverwaltungssystem der HAW Hamburg.
+
+2. Erfüllung der Studienleistungen:
+   - Soll: Ein regulär immatrikulierter Studierender muss die geforderten Studienleistungen innerhalb der vorgegebenen Fristen erbringen.
+   - Ist in Java: Überprüfung der erfolgreich absolvierten Studienleistungen durch Abfrage der Noten und Leistungspunkte aus dem Studierendenverwaltungssystem der HAW Hamburg.
+
+3. Pünktliche Zahlung der Studiengebühren:
+   - Soll: Ein regulär immatrikulierter Studierender muss die Studiengebühren fristgerecht bezahlen.
+   - Ist in Java: Überprüfung der fristgerechten Zahlung der Studiengebühren durch Abfrage des Zahlungsstatus aus dem Studierendenverwaltungssystem der HAW Hamburg.
