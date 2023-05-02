@@ -1,0 +1,25 @@
+Mit welchen Argumenten erreicht man eine vollständige Testabdeckung der Prozedur:
+/**
+* Eine Dummy-Prozedur, um Testabdeckung zu evaluieren.
+*/
+String eineProzedur(int zahl, char zeichen){
+if ( zahl > 0 ){
+return (zeichen == ’a’)? "Jan" : "Hein";
+} else {
+return "Klaas";
+}
+}
+
+
+Um eine vollständige Testabdeckung der Prozedur zu erreichen, müsste man mindestens zwei Testfälle erstellen:#
+
+1. Testfall: zahl > 0 und zeichen == 'a'
+2. Testfall: zahl <= 0
+
+
+Für den ersten Testfall müsste man eine positive Zahl und das Zeichen 'a' übergeben, um sicherzustellen, 
+dass der erste Teil der Bedingung erfüllt wird und "Jan" zurückgegeben wird. 
+
+
+Für den zweiten Testfall müsste man eine nicht-positive Zahl übergeben, 
+um sicherzustellen, dass der zweite Teil der Bedingung erfüllt wird und "Klaas" zurückgegeben wird.
