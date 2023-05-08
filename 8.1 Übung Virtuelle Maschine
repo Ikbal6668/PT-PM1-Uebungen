@@ -1,0 +1,25 @@
+Um ein Java-Programm laufen lassen zu können, muss auf dem System eine Virtuelle Maschi-
+ne installiert sein. Das ist ein Mehraufwand. Warum kann das Konzept dennoch sinnvoll sein?
+
+– javac
+– java
+– Hallo-Welt auf der Kommandozeile
+– Packages
+
+
+
+Lösung:
+
+Das Konzept der virtuellen Maschine (VM) ist sinnvoll, weil es eine plattformunabhängige Ausführung
+von Java-Programmen ermöglicht. Das bedeutet, dass ein Java-Programm auf verschiedenen Betriebssystemen
+ausgeführt werden kann, ohne dass es für jede Plattform neu kompiliert werden muss.
+
+Das bedeutet auch, dass Java-Programme sicherer sind, da sie in einer isolierten Umgebung ausgeführt werden,
+die verhindert, dass ein Programm auf das Betriebssystem oder andere Anwendungen zugreift. Außerdem bietet die
+VM eine automatische Speicherverwaltung, was bedeutet, dass Programmierer sich nicht um Speicherlecks kümmern müssen.
+
+Um Java-Programme zu kompilieren und auszuführen, ist es notwendig, Java-Tools wie den Java Compiler (javac) und den
+Java-Interpreter (java) zu verwenden. Der Java-Compiler übersetzt den Quellcode in Bytecode, der auf der VM ausgeführt werden kann, während der Java-Interpreter den Bytecode ausführt.
+
+Packages sind ein weiteres wichtiges Konzept in Java, das eine hierarchische Struktur für Klassen bietet und Klassen
+in logische Gruppen unterteilt. Packages helfen, den Code übersichtlicher und besser strukturiert zu machen und ermöglichen auch die Wiederverwendbarkeit von Code.
