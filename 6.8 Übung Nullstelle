@@ -17,89 +17,108 @@ Schreiben Sie eine Testprozedur für nullstelle().
 – vergleichbares Verhalten bezüglich Eingabe
 
 
+Lösung:
 
 void setup() {
-  testeNullstelle();
-  exit();
+  size(100, 100);
+  background(255, 255, 255);
+  
+  // 2x^ - 3x - 2 -> Nullstellen -0.5 und 2
+  println(nullstelle(2,-3,-2));
+  // x^2 -> doppekte Nullstelle 0 
+  println(nullstelle(1,0,0));
+  // x^ + 1 -> keine Nullstelle
+  println(nullstelle(1,0,1));
+  // linear: Nullstelle bei -1
+  println(nullstelle(0,1,1));
+  
+  testNullstelle();
 }
 
-float nullstelle(float a, float b, float c) {
-  // Sonderfall: a = 0
-  if (a == 0) {
-    // lineare Funktion
-    if (b == 0) {
-      // konstante Funktion
-      return Float.NaN;
-    } else {
-      // keine quadratische Funktion
-      return -c / b;
-    }
-  } else {
-    // Diskriminante berechnen
-    float diskriminante = b * b - 4 * a * c;
-    
-    // Sonderfall: keine Nullstelle
-    if (diskriminante < 0) {
-      return Float.NaN;
-    }
-    
-    // Quadratische Formel anwenden
-    float x1 = (-b - sqrt(diskriminante)) / (2 * a);
-    float x2 = (-b + sqrt(diskriminante)) / (2 * a);
-    
-    // Die erste (kleinere) Nullstelle zurückgeben
-    return min(x1, x2);
+/**
+ * Mit diesem Flag aktiviert/deaktiviert man den Tracing Modus.
+ */
+private final boolean TRACE_MODUS = true;
+
+/**
+ * Dieses Flag speichert den aktuellen Stand des Tests. Hat es
+ * den Wert true, sind alle bisherigen Testfälle erfolgreich.
+ */
+boolean alleTestsErfolgreich = true;
+
+/**
+ * Übergabe einer Tracing-Nachricht zur Ausgabe, falls der Tracing-Modus aktiviert ist.
+ */
+public void trace(String ausgabe){
+  if (TRACE_MODUS){
+    println(ausgabe);
   }
 }
 
-void testeNullstelle() {
-  boolean alleTestsErfolgreich = true;
-  
-  // Testfall 1: Quadratische Funktion mit zwei Nullstellen
-  float a = 1;
-  float b = -3;
-  float c = 2;
-  float erwartet = 1;
-  float tatsaechlich = nullstelle(a, b, c);
-  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
-  
-  // Testfall 2: Quadratische Funktion mit einer Nullstelle
-  a = 1;
-  b = -2;
-  c = 1;
-  erwartet = 1;
-  tatsaechlich = nullstelle(a, b, c);
-  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
-  
-  // Testfall 3: Quadratische Funktion ohne Nullstellen
-  a = 2;
-  b = 1;
-  c = 3;
-  erwartet = Float.NaN;
-  tatsaechlich = nullstelle(a, b, c);
-  alleTestsErfolgreich = alleTestsErfolgreich && Float.isNaN(tatsaechlich);
-  
-  // Testfall 4: Konstante Funktion
-  a = 0;
-  b = 0;
-  c = 5;
-  erwartet = Float.NaN;
-  tatsaechlich = nullstelle(a, b, c);
-  alleTestsErfolgreich = alleTestsErfolgreich && Float.isNaN(tatsaechlich);
-  
-  // Testfall 5: Lineare Funktion
-  a = 0;
-  b = 2;
-  c = 3;
-  erwartet = -c / b;
-  tatsaechlich = nullstelle(a, b, c);
-  alleTestsErfolgreich = alleTestsErfolgreich && (tatsaechlich == erwartet);
-  
-  // Ergebnis ausgeben
-  println(alleTestsErfolgreich ?
-          "Alle Tests erfolgreich." :
-          "Mindestens ein Test fehlgeschlagen.");
+/**
+ * Prüft, ob die beiden Variablen soll und ist den gleichen
+ * Wert haben. Ergebnis fliesst in globale Variable
+ * alleTestsErfolgreich ein.
+ */
+void testeInt(int soll, int ist) {
+  alleTestsErfolgreich = alleTestsErfolgreich && ist == soll;
 }
 
-Ausgabe:
-Alle Tests erfolgreich.
+/**
+ * Prüft, ob die beiden Variablen soll und ist den gleichen
+ * Wert haben. Ergebnis fliesst in globale Variable
+ * alleTestsErfolgreich ein.
+ */
+void testeFloat(float soll, float ist, float toleranz) {
+  alleTestsErfolgreich = alleTestsErfolgreich && abs(ist - soll) < toleranz;
+}
+
+/**
+ * Berechnet die erste (kleinere) Nullstelle einer quadratischen Funktion der Form
+ * ax^2 + bx + c.
+ */
+float nullstelle(float a, float b, float c){
+  if (a == 0){
+    // keine quadratische Funktion
+    if ( b == 0 ){
+      // konstante Funktion
+      return Float.NaN;
+    } else {
+      // lineare Funktion
+      return -c/b;
+    }
+  }
+  
+  float p = b/a;
+  float q = c/a;
+  float wurzelAusdruck = p*p/4.0 - q;
+  if ( wurzelAusdruck < 0 ){
+    // keine Nullstelle
+    return Float.NaN;
+  }
+  float x0 = -p/2.0f - sqrt(wurzelAusdruck);
+  return x0;
+}
+
+/**
+ * Testprozedur für die Prozedur nullstelle().
+ */
+void testNullstelle(){
+   // 2x^ - 3x - 2 -> Nullstellen -0.5 und 2
+  testeFloat(-0.5f, nullstelle(2,-3,-2), 1e-4f);
+  // x^2 -> doppekte Nullstelle 0 
+  testeFloat(0f, nullstelle(1,0,0), 1e-4f);
+  // x^ + 1 -> keine Nullstelle
+  alleTestsErfolgreich = alleTestsErfolgreich && Float.isNaN(nullstelle(1,0,1));
+  // linear: Nullstelle bei -1
+  testeFloat(-1f, nullstelle(0,1,1), 1e-4f);
+  println("Alle Tests für nullstelle() erfolgreich: " + alleTestsErfolgreich);
+}
+
+Ausgabe: 
+
+-0.5
+-0.0
+NaN
+-1.0
+Alle Tests für nullstelle() erfolgreich: true
