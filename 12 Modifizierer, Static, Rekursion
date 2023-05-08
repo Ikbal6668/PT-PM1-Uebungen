@@ -1,0 +1,9 @@
+• Modifizierer
+– immer: public, private, final
+– nie mehr: <default>
+– in Ausnahmen: static
+– später: abstract, protected
+– PM2: synchronized
+– Getter
+– Setter
+* Wertkontrolle möglich
