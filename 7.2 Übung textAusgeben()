@@ -1,0 +1,38 @@
+Schreiben Sie eine Switch-Anweisung, die für eine Variable int zahl folgende Ausgaben in einer
+Prozedur textAusgeben() erzeugt:
+
+– falls zahl == 1 ? "Eins"
+– falls zahl == 2 ? "Zwei"
+– ansonsten ? "Alles andere"
+
+
+• Syntaktischer Zucker
+• Zeichen, Literale
+• Zeichencodes, int ↔ char
+• Zeichensätze: Ascii, Latin, Unicode
+
+
+Lösung:
+
+public void textAusgeben(int zahl) {
+  // Definiere eine Switch-Anweisung, die auf den Wert von "zahl" überprüft
+  switch(zahl) {
+    // Wenn "zahl" gleich 1 ist, führe diesen Codeblock aus
+    case 1:
+      System.out.println("Eins"); // Gib die Zeichenkette "Eins" auf der Konsole aus
+      break; // Beende die Switch-Anweisung
+
+    // Wenn "zahl" gleich 2 ist, führe diesen Codeblock aus
+    case 2:
+      System.out.println("Zwei"); // Gib die Zeichenkette "Zwei" auf der Konsole aus
+      break; // Beende die Switch-Anweisung
+
+    // Wenn keine der Bedingungen erfüllt ist, führe diesen Codeblock aus
+    default:
+      System.out.println("Alles andere"); // Gib die Zeichenkette "Alles andere" auf der Konsole aus
+      break; // Beende die Switch-Anweisung
+  }
+}
+
+
+.
