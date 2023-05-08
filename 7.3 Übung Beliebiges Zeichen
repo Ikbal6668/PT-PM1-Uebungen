@@ -1,0 +1,31 @@
+Schreiben Sie ein Prozedur, die für ein beliebiges Zeichen den Zeichencode zurückgibt.
+
+• Unicode-Escape-Sequenzen, Steuerzeichen
+
+
+Lösung:
+
+// Definieren Sie die Klasse "ZeichencodeBestimmen"
+public class ZeichencodeBestimmen {
+    // Hauptmethode der Klasse
+    public static void main(String[] args) {
+        // Definieren Sie ein Zeichen, für das der Zeichencode bestimmt werden soll
+        char meinZeichen = 'a';
+        // Rufen Sie die Methode "zeichencodeBestimmen()" auf und speichern Sie das Ergebnis in einer Variablen
+        int meinZeichencode = zeichencodeBestimmen(meinZeichen);
+        // Gib das Ergebnis auf der Konsole aus
+        System.out.println("Der Zeichencode von " + meinZeichen + " ist " + meinZeichencode);
+    }
+
+    // Methode zur Bestimmung des Zeichencodes für ein gegebenes Zeichen
+    public static int zeichencodeBestimmen(char zeichen) {
+        // Verwenden Sie die Methode "charCodeAt()" des Zeichen-Objekts, um den Zeichencode zu erhalten
+        int zeichencode = (int) zeichen;
+        // Gib den Zeichencode zurück
+        return zeichencode;
+    }
+}
+
+Ausgabe: 
+
+Der Zeichencode von a ist 97
