@@ -1,0 +1,61 @@
+Schreiben Sie eine Prozedur
+void zeichneForm(char formId, float x, float y),
+die an der Position (x, y) eine geometrische Form zeichnet. Die Form wird durch formId festgelegt.
+Dabei steht das Zeichen c für eine Kreis (circle), t für ein Dreieck (triangle) und s für ein Quadrat
+(square). Verwenden Sie switch. Geben Sie bei einer ungültigen Eingabe eine Fehlermeldung auf
+der Konsole aus (default).
+Verwenden Sie die Prozedur, um n Symbole in einer kreisförmigen Anordnung zu zeichnen. Erinne-
+rung: Einen Punkt auf dem Einheitskreis für den Winkel α bestimmen Sie mit (cos(α), sin(α))
+
+
+Lösung: 
+
+// Zeichnet eine bestimmte Anzahl an zufällig angeordneten Symbolen
+void zeichneSymbole(int anzahlSymbole){
+  // Parameter für die Kreisanordnung
+  float radius = 100;
+  float centerX = 200;
+  float centerY = 200;
+  // Farben für den Hintergrund und die Formen
+  stroke(25,75,25);
+  fill(125,175,125);
+  // Schleife über alle Symbole
+  for (int symbolIndex = 0; symbolIndex < anzahlSymbole; symbolIndex++ ){
+    // Berechnung der Position auf dem Kreis
+    float alpha = (float)symbolIndex / (float) anzahlSymbole * 2 * PI;
+    float x = centerX + sin(alpha) * radius;
+    float y = centerY + cos(alpha) * radius;
+    // Auswahl einer zufälligen Form
+    int formIndex = (int)random(3);
+    char formId = formIndex == 0? 'c' : 
+      formIndex == 1 ? 't' : 's';
+    // Zeichnung der Form an der entsprechenden Position
+    zeichneForm(formId, x, y);
+  }
+}
+
+/**
+ * Zeichnet eine geometrische Form an der angebenen Position (x,y). Gültige 
+ * Form-IDs sind: 'c' = Kreis (circle), 't' = Dreieck (triangle), 's' = 
+ * Quadrat (square)
+ */
+void zeichneForm (char formId, float x, float y) {
+  // Auswahl der richtigen Form
+  switch(formId){
+    case 'c':
+      // Zeichnung eines Kreises
+      circle(x, y, 20);
+      break;
+     case 't':
+      // Zeichnung eines Dreiecks
+      triangle(x, y-10, x-10, y+10, x+10, y+10 );
+      break;
+     case 's':
+       // Zeichnung eines Quadrats
+       rect(x-10, y-10, 20, 20);
+       break;
+     default:
+      // Fehlermeldung für ungültige Formen
+      println("Ungültiger Form-Index: " + formId);
+  }
+}
