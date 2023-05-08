@@ -1,0 +1,92 @@
+Die Fibonacci-Zahlen sind folgendermaßen definiert:
+f (1) = 1, f (2) = 1, f (n) = f (n − 1) + f (n − 2) für n > 0
+Schreiben Sie eine Prozedur fib(int n), die die n’te Fibbonacci-Zahl berechnet. Denken Sie an
+Tests und Sonderfälle.
+Schreibe Sie nun eine Prozedur zum Visualisieren der Fibonacci-Zahlen als Quadrate. Jede Zahl soll
+durch ein Quadrat der Größe dargestellt werden. Die Seitenlänge entspricht der 5-fachen Größe der
+entsprechenden Zahl haben. Zwischen den Quadraten sollen jeweils 3 Pixel Platz gelassen werden.
+Die Anzahl der dargestellten Fibbonacci-Zahlen soll als Argument an die Prozedur übergeben wer-
+den.
+
+
+Lösung:
+
+/**
+ * Berechnet die n-te Fibonacci-Zahl.
+ * @param n die Nummer der zu berechnenden Fibonacci-Zahl
+ * @return die n-te Fibonacci-Zahl
+ * @throws IllegalArgumentException wenn die Eingabe ungültig ist (n kleiner gleich 0)
+ */
+int fib(int n){
+  // Überprüfen, ob Eingabe gültig ist
+  if ( n <= 0 ){
+    throw new IllegalArgumentException("Ungültige Eingabe: " + n);
+  }
+  
+  // Berechnung der Fibonacci-Zahlen
+  if ( n == 1 ){
+    return 1;
+  } else if ( n == 2 ){
+    return 1;
+  } else {
+    return fib(n-1) + fib(n-2);
+  }
+}
+
+/**
+ * Visualisiert die Folge der Fibonacci-Zahlen bis zur n-ten Zahl.
+ * @param n die Nummer der letzten Fibonacci-Zahl, die visualisiert werden soll
+ * @throws IllegalArgumentException wenn die Eingabe ungültig ist (n kleiner gleich 0)
+ */
+void zeichneFib(int n){
+  // Überprüfen, ob Eingabe gültig ist
+  if ( n <= 0 ){
+    throw new IllegalArgumentException("Ungültige Eingabe: " + n);
+  }
+  
+  // Initialisierung der Rechtecke
+  int x = 3;
+  for ( int i = 1; i <= n; i++ ){
+    int fib = fib(i);
+    int laenge = fib * 5;
+    rect(x, 3, laenge, laenge);
+    x += laenge + 3;
+  } 
+}
+
+/**
+ * Prüft, ob die beiden Integer-Werte übereinstimmen.
+ * Wenn die Werte nicht übereinstimmen, wird die globale Variable alleTestsErfolgreich auf false gesetzt.
+ * @param soll der erwartete Wert
+ * @param ist der tatsächliche Wert
+ */
+void testeInt(int soll, int ist) {
+  alleTestsErfolgreich = alleTestsErfolgreich && ist == soll;
+}
+
+/**
+ * Testet die Funktion fib() mit verschiedenen Eingaben und gibt aus, ob die Tests erfolgreich waren.
+ */
+void testFib(){
+  // Testfälle definieren und ausführen
+  testeInt(1, fib(1));
+  testeInt(1, fib(2));
+  testeInt(8, fib(6));
+  
+  // Ausgabe der Testergebnisse
+  println(alleTestsErfolgreich ? "Alle Tests erfolgreich." :
+    "Mindestens ein Test fehlgeschlagen.");
+}
+
+/**
+ * Hauptprogramm: Führt die Tests aus und visualisiert die Fibonacci-Folge bis zur 10. Zahl.
+ */
+void setup() {
+  size(500, 200);
+  
+  // Test der Funktion fib()
+  testFib();
+  
+  // Visualisierung der Fibonacci-Folge
+  zeichneFib(10);
+}
