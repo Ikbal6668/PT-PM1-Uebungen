@@ -1,0 +1,17 @@
+Geben Sie einen Java-String an, der folgenden Text beinhaltet:
+<Anführungszeichen>Hallo<Zeilenumbruch>
+
+Lösung:
+
+String text = "\"Hallo\n";
+
+
+Erklärung:
+
+In diesem String wird das doppelte Anführungszeichen mithilfe des Escape-Zeichens `\` maskiert, um zu 
+verhindern, dass es den String vorzeitig abschließt. Das Zeichen für den Zeilenumbruch `\n` wird ebenfalls 
+verwendet, um eine neue Zeile im String zu beginnen.
+
+
+
+.
