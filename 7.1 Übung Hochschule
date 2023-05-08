@@ -1,0 +1,47 @@
+Was macht der folgende Code?
+
+String getStatus(int index) {
+if ( index < 1 || index > 3 ){
+throw new IllegalArgumentException("Ungültiger Index");
+}
+switch(index){
+case 1: return "Studierender";
+case 2: return "Bediensteter";
+case 3: return "Professor";
+}
+return "";
+}
+
+Warum werden hier keine breaks benötigt? Warum ist return ""; notwendig?
+• Rolle von break
+• Default-Fall
+• unterstütze Typen: Ganzzahlen, Zeichen, Aufzählungstypen, Strings
+• Konstanten
+
+
+
+Antwort:
+
+Der Code definiert eine Methode mit dem Namen `getStatus`, die einen Parameter `index` vom Typ `int` annimmt und einen String zurückgibt.
+Die Methode überprüft zuerst, ob der übergebene `index`-Wert kleiner als 1 oder größer als 3 ist. Wenn dies der Fall ist, wird eine
+Ausnahme vom Typ `IllegalArgumentException` mit der Meldung "Ungültiger Index" geworfen.
+
+
+Wenn der übergebene `index`-Wert jedoch innerhalb des gültigen Bereichs von 1 bis 3 liegt, wird der Wert des `index`-Parameters 
+innerhalb eines switch-Statements überprüft. In jedem Fall wird ein String zurückgegeben, der den Status repräsentiert, der dem 
+`index`-Wert entspricht. Wenn beispielsweise `index` den Wert 1 hat, wird der String "Studierender" zurückgegeben.
+
+In diesem Fall sind keine `break`-Anweisungen erforderlich, da jeder Fall am Ende des entsprechenden Strings mit einem `return`
+beendet wird. Sobald der String zurückgegeben wurde, wird die Ausführung der Methode beendet und es wird keine weitere Codeausführung innerhalb des switch-Statements durchgeführt.
+
+Schließlich wird eine leere Zeichenfolge zurückgegeben, wenn kein passender `index`-Wert gefunden wurde. Dies geschieht nach dem 
+switch-Statement und vor dem Ende der Methode.
+
+Die Rückgabe der leeren Zeichenfolge ist notwendig, damit die Methode immer einen Wert zurückgibt, unabhängig davon, ob der 
+`index`-Wert gültig ist oder nicht. Wenn dies nicht geschehen würde, würde der Compiler einen Fehler melden, da die Methode einen Rückgabewert vom Typ `String` erwartet.
+
+
+
+
+
+.
