@@ -1,0 +1,36 @@
+Deklarieren Sie eine Variable für ein Student-Objekt und weisen der Variablen ein konkretes Student-
+Objekt zu.
+
+• Objektvariablen
+• jetzt keine globalen Variablen mehr, dafür Objektvariablen vs. lokale Variablen
+• Zugriff auf Objektvariablen
+
+
+Lösung:
+
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        student1.name = "Max Mustermann";
+        student1.alter = 21;
+        student1.studiengang = "Informatik";
+        
+        // Deklaration einer Variablen für ein Student-Objekt
+        Student student2;
+        
+        // Zuweisung eines konkretes Student-Objekts zur Variablen
+        student2 = new Student();
+        student2.name = "Anna Schmidt";
+        student2.alter = 20;
+        student2.studiengang = "Physik";
+        
+        System.out.println("Name: " + student1.name + ", Alter: " + student1.alter + ", Studiengang: " + student1.studiengang);
+        System.out.println("Name: " + student2.name + ", Alter: " + student2.alter + ", Studiengang: " + student2.studiengang);
+    }
+}
+
+class Student {
+    String name;
+    int alter;
+    String studiengang;
+}
