@@ -1,0 +1,19 @@
+Geben Sie die Kommandozeilenbefehle zum Kompilieren und Ausführen der Klasse app.main.Anwendung
+mit der main()-Methode an.
+
+– IDE: IntelliJ
+– Hallo-Welt in IntelliJ
+– Autoformatierung
+– JShell
+• Ein- und Ausgabe
+– Ausgabe
+
+
+Kompilieren:
+
+javac app/main/Anwendung.java
+
+
+Ausführen:
+
+java app.main.Anwendung
