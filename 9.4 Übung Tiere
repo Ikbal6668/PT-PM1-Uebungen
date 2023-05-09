@@ -1,0 +1,36 @@
+Erstellen Sie eine Skizze der Variablen im Speicher für folgenden Quellcode:
+Tier tier1 = new Tier();
+Tier tier2 = new Tier();
+Tier tier3 = tier1;
+tier2 = tier3;
+
+• Referenztypen, Referenzvariablen, Referenzen -> Unterscheidung zu Pointer in echte Speicheradres-
+se
+• Leere Referenz: null
+
+
+
+Lösung:
+
+         +-----------+
+tier1 -> |  Objekt   |   // Tier-Objekt mit bestimmtem Speicherplatz
+         +-----------+
+                 ^
+                 |
+         +-----------+        +-----------+
+tier2 -> |  Objekt   |  ----> |   null    |   // leere Referenz auf Tier-Objekt
+         +-----------+        +-----------+
+                                     ^
+                                     |
+                                     |
+                                     |
+                                     |
+         +-----------+               |
+tier3 -> |  Objekt   |  -------------
+         +-----------+
+         
+
+
+In diesem Beispiel werden drei Tier-Objekte erzeugt. `tier1` und `tier2` sind Referenzvariablen,
+die auf leere Objekte zeigen. `tier3` ist eine Referenzvariable, die auf das gleiche Objekt zeigt
+wie `tier1`. Später wird `tier2` auf das gleiche Objekt wie `tier3` gesetzt. Die Speicheradresse von Objekten im Speicher ist unbekannt.
