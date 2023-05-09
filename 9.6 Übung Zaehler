@@ -1,0 +1,36 @@
+Schreiben Sie eine Klasse Zaehler mit einer Objektvariable für den aktuellen Zählerstand.
+
+
+Lösung:
+
+// Definition einer Klasse "Zaehler"
+public class Zaehler {
+
+    // Objektvariable "zaehlerstand"
+    private int zaehlerstand;
+
+    // Konstruktor mit einem Parameter "zaehlerstand"
+    public Zaehler(int zaehlerstand) {
+        this.zaehlerstand = zaehlerstand;
+    }
+
+    // Getter-Methode für "zaehlerstand"
+    public int getZaehlerstand() {
+        return zaehlerstand;
+    }
+
+    // Setter-Methode für "zaehlerstand"
+    public void setZaehlerstand(int zaehlerstand) {
+        this.zaehlerstand = zaehlerstand;
+    }
+
+    // Inkrementiere den "zaehlerstand" um 1
+    public void inkrement() {
+        zaehlerstand++;
+    }
+
+    // Dekrementiere den "zaehlerstand" um 1
+    public void dekrement() {
+        zaehlerstand--;
+    }
+}
