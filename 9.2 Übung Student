@@ -1,0 +1,17 @@
+Schreiben Sie eine (leere) Klasse Student und erzeugen Sie ein Objekt daraus.
+
+• Referenztypen vs. primitive Typen -> im Speicher
+• Operator new
+
+
+Antwort:
+
+public class Student {
+    // leer
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student(); // Erzeugung eines Student-Objekts
+    }
+}
