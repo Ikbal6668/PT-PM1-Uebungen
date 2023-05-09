@@ -1,0 +1,25 @@
+Überlegen Sie sich ein Beispiel für eine Klasse. Was macht darin den Zustand eines Objektes aus
+(Objektvariablen)? Was könnte das Verhalten der Objekte ausmachen (Methoden).
+
+• Syntax: Klassen mit Objektvariablen
+• Erzeugen von Objekten
+
+
+
+Antwort:
+
+Ein Beispiel für eine Klasse könnte die Klasse "Auto" sein. Der Zustand eines Auto-Objekts könnte aus den folgenden Objektvariablen bestehen:
+
+- Hersteller (z.B. "Volkswagen")
+- Modell (z.B. "Golf")
+- Baujahr (z.B. 2019)
+- Farbe (z.B. "Rot")
+- Geschwindigkeit (z.B. 60 km/h)
+
+Das Verhalten der Auto-Objekte könnte durch folgende Methoden ausgedrückt werden:
+
+- Beschleunigen: Diese Methode erhöht die Geschwindigkeit des Autos um einen bestimmten Betrag.
+- Bremsen: Diese Methode verringert die Geschwindigkeit des Autos um einen bestimmten Betrag.
+- Lenken: Diese Methode ändert die Richtung, in die das Auto fährt.
+- Tanken: Diese Methode füllt den Tank des Autos mit einer bestimmten Menge an Kraftstoff.
+- Anhalten: Diese Methode bringt das Auto zum Stillstand.
