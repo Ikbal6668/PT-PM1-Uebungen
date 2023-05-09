@@ -1,0 +1,16 @@
+Schreiben Sie ein Java-Programm zur Ausgabe einer Zeichenkette auf der Konsole.
+
+– Eingabe: Scanner
+
+
+import java.util.Scanner; // Import der Scanner-Klasse
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // Initialisierung des Scanners
+        System.out.print("Geben Sie eine Zeichenkette ein: "); // Aufforderung zur Eingabe
+        String input = scanner.nextLine(); // Eingabe einer Zeichenkette
+        System.out.println("Die eingegebene Zeichenkette lautet: " + input); // Ausgabe der eingegebenen Zeichenkette
+        scanner.close(); // Schließen des Scanners
+    }
+}
