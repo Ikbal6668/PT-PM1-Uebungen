@@ -1,0 +1,31 @@
+Schreiben Sie ein Java-Programm, um eine Zeichenkette und dann eine Ganzzahl von der
+Konsole erst einzulesen und dann dort wieder auszugeben.
+
+– Import-Anweisungen
+
+
+
+Lösung:
+
+// Import-Anweisungen
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Eingabeaufforderung und Einlesen der Zeichenkette
+        System.out.print("Geben Sie eine Zeichenkette ein: ");
+        String inputString = scanner.nextLine();
+
+        // Eingabeaufforderung und Einlesen der Ganzzahl
+        System.out.print("Geben Sie eine Ganzzahl ein: ");
+        int inputInt = scanner.nextInt();
+
+        // Ausgabe der eingegebenen Zeichenkette und Ganzzahl
+        System.out.println("Die eingegebene Zeichenkette lautet: " + inputString);
+        System.out.println("Die eingegebene Ganzzahl lautet: " + inputInt);
+
+        scanner.close();
+    }
+}
