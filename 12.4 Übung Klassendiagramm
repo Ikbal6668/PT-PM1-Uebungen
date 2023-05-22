@@ -1,0 +1,41 @@
+Zeichnen Sie ein Klassendiagramm zu folgender Klasse:
+
+class Sensor {
+private int wert;
+public Sensor(int wert){
+this.wert = wert;
+}
+public static int betrag(int wert){
+return Math.abs(wert);
+}
+}
+
+• Statische Dinge
+– statische Objektvariablen = Klassenvariablen
+– Initialisierung
+– Zugriff über Klassennamen
+
+
+
+
+Hier ist das Klassendiagramm für die Klasse "Sensor":
+
+```
++---------------------+
+|       Sensor        |
++---------------------+
+| - wert: int         |
++---------------------+
+| + Sensor(wert: int) |
+| + betrag(wert: int) |
++---------------------+
+```
+
+Das Klassendiagramm zeigt die Klasse "Sensor" mit ihren 
+Attributen und Methoden. Die Variable "wert" ist als private deklariert,
+was bedeutet, dass sie nur innerhalb der Klasse zugänglich ist.
+Der Konstruktor "Sensor(wert: int)" wird verwendet, um ein Sensor-Objekt
+zu erstellen und den Wert zu initialisieren. Die Methode "betrag(wert: int)" 
+ist als statisch gekennzeichnet und kann aufgerufen werden, ohne ein Objekt 
+der Klasse zu instanziieren. Sie gibt den absoluten Wert des übergebenen 
+Arguments zurück, indem sie die Methode "Math.abs()" verwendet.
