@@ -1,0 +1,15 @@
+Gegeben ist ein Array
+int [] zahlen = ...;
+Geben Sie alle Elemente des Arrays mit einer for-Schleife aus. Entnehmen Sie die Länge des
+Arrays der Variable zahlen.
+
+– for-each-Schleife (nur Lesezugriff)
+
+
+Code:
+
+int[] zahlen = {1, 2, 3, 4, 5};
+
+for (int i = 0; i < zahlen.length; i++) {
+    System.out.println(zahlen[i]);
+}
