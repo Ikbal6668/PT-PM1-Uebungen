@@ -1,0 +1,56 @@
+class Bruch {
+int zaehler;
+int nenner;
+}
+Schreiben Sie in der Klasse Bruch eine Methode subtrahiereDavon(). Die Methode hat einen
+Parameter (andererBruch) vom Typ Bruch. In der Methode sollen die beiden Brüche subtra-
+hiert werden, das Ergebnis überschreibt den Bruch selbst.
+
+• Ergebnisrückgabe
+– void, return
+
+
+Code:
+
+public class Bruch {
+    private int zaehler; // Zähler des Bruchs
+    private int nenner; // Nenner des Bruchs
+
+    public Bruch(int zaehler, int nenner) {
+        this.zaehler = zaehler;
+        this.nenner = nenner;
+    }
+
+    public void subtrahiereDavon(Bruch andererBruch) {
+        // Subtrahiere die beiden Brüche
+        int neuerZaehler = this.zaehler * andererBruch.nenner - andererBruch.zaehler * this.nenner;
+        int neuerNenner = this.nenner * andererBruch.nenner;
+
+        // Aktualisiere die Werte des aktuellen Bruchs
+        this.zaehler = neuerZaehler;
+        this.nenner = neuerNenner;
+    }
+
+    public static void main(String[] args) {
+        // Erstelle zwei Bruchobjekte
+        Bruch bruch1 = new Bruch(3, 4);
+        Bruch bruch2 = new Bruch(1, 2);
+
+        // Gebe die Werte der Brüche vor der Subtraktion aus
+        System.out.println("Bruch 1 vor der Subtraktion: " + bruch1.zaehler + "/" + bruch1.nenner);
+        System.out.println("Bruch 2 vor der Subtraktion: " + bruch2.zaehler + "/" + bruch2.nenner);
+
+        // Subtrahiere bruch2 von bruch1
+        bruch1.subtrahiereDavon(bruch2);
+
+        // Gebe den Wert von bruch1 nach der Subtraktion aus
+        System.out.println("Bruch 1 nach der Subtraktion: " + bruch1.zaehler + "/" + bruch1.nenner);
+    }
+}
+
+
+Ausgabe:
+
+Bruch 1 vor der Subtraktion: 3/4
+Bruch 2 vor der Subtraktion: 1/2
+Bruch 1 nach der Subtraktion: 2/8
