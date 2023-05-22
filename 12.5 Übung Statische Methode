@@ -1,0 +1,29 @@
+Schreiben Sie in Sensor eine statische Methode, die den Betrag einer int-Zahl zurückgibt. Rufen Sie die Methode auf (in einer gedachten main()-Methode).
+
+– Konstante (final)
+
+
+Code:
+
+public class Sensor {
+    private int wert;  // private Instanzvariable, die den Wert des Sensors speichert
+
+    public Sensor(int wert) {  // Konstruktor, um den Sensor mit einem Wert zu initialisieren
+        this.wert = wert;
+    }
+
+    public static int betrag(int wert) {  // statische Methode, die den Betrag einer Zahl zurückgibt
+        return Math.abs(wert);
+    }
+
+    public static void main(String[] args) {
+        int zahl = -5;  // eine Beispielzahl
+        int betrag = betrag(zahl);  // Aufruf der statischen Methode betrag() mit der Zahl als Argument
+        System.out.println("Der Betrag von " + zahl + " ist " + betrag);  // Ausgabe des Ergebnisses
+    }
+}
+
+
+Ausgabe:
+
+Der Betrag von -5 ist 5
