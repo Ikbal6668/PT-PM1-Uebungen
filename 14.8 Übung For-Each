@@ -4,16 +4,11 @@ laufen und alle Elemente auf der Konsole auszugeben.
 
 Code:
 
-public class Übung {
-    public static void main(String[] args) {
-
-        int[] zahlen = {1, 2, 3, 4, 5};
-
-        for (int zahl : zahlen) {
-            System.out.println(zahl);
+  public static void main(String[] args) {
+        for (int zahl : quadratzahlen) {
+            System.out.print(zahl + " ");
         }
-    }
-}
+        System.out.println();
 
 Ausgabe:
 
@@ -22,3 +17,4 @@ Ausgabe:
 3
 4
 5
+  
