@@ -1,0 +1,57 @@
+Der Wert eines Sensor muss immer mal wieder auf den Standardwert (23) zurückgesetzt wer-
+den soll. Sie wollen aber Setter vermeiden. Ideen?
+
+– sinnvolle Methoden anstelle von Gettern/Settern → interne Verarbeitung des Zustands
+– Datenkapselung
+– Unveränderlichkeit
+
+
+Lösung:
+
+Eine Möglichkeit, den Wert eines Sensors periodisch auf den Standardwert (23) zurückzusetzen, 
+ohne explizite Setter-Methoden zu verwenden, besteht darin, eine interne Methode in der Sensor-Klasse zu implementieren.
+Diese Methode kann beispielsweise `resetValue()` genannt werden und den Wert auf den Standardwert setzen.
+
+Hier ist eine überarbeitete Version der Sensor-Klasse, die diese Idee umsetzt:
+
+Code:
+
+public class Sensor {
+    private static final int STANDARD_WERT = 23; // Standardwert für den Sensor
+    private String id; // Private Instanzvariable zur Speicherung der ID
+    private int wert; // Private Instanzvariable zur Speicherung des Werts
+
+    public Sensor(String id) {
+        this.id = id; // Initialisierung der ID mit dem übergebenen Wert
+        resetValue(); // Setzt den Wert auf den Standardwert
+    }
+
+    public int getValue() {
+        return wert; // Gibt den aktuellen Wert des Sensors zurück
+    }
+
+    private void resetValue() {
+        wert = STANDARD_WERT; // Setzt den Wert auf den Standardwert zurück
+    }
+
+    public static void main(String[] args) {
+        Sensor sensor = new Sensor("MeineID"); // Erzeugt ein Sensor-Objekt mit ID "MeineID"
+        System.out.println(sensor.getValue()); // Gibt den aktuellen Wert des Sensors aus
+        // ...
+        // Hier können weitere Operationen mit dem Sensor durchgeführt werden
+        // ...
+        sensor.resetValue(); // Setzt den Wert des Sensors auf den Standardwert zurück
+        System.out.println(sensor.getValue()); // Gibt den aktualisierten Wert des Sensors aus
+    }
+}
+```
+
+In dieser Version der Sensor-Klasse wird der Wert des Sensors im Konstruktor auf den Standardwert zurückgesetzt, indem die Methode `resetValue()`
+aufgerufen wird. Die Methode `resetValue()` ist private, sodass sie nur von anderen Methoden innerhalb der Sensor-Klasse aufgerufen werden kann. 
+Dies ermöglicht die interne Verarbeitung des Zustands, ohne direkten Zugriff von außen.
+
+Die Methode `getValue()` dient als sinnvolle Alternative zum Getter, um den aktuellen Wert des Sensors abzurufen.
+
+In der `main()`-Methode wird ein Sensor-Objekt mit der ID "MeineID" erzeugt und der aktuelle Wert des Sensors wird ausgegeben. 
+Anschließend können weitere Operationen mit dem Sensor durchgeführt werden. Schließlich wird die Methode `resetValue()` aufgerufen,
+um den Wert des Sensors zurückzusetzen, und der aktualisierte Wert wird erneut ausgegeben.
