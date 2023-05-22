@@ -1,0 +1,34 @@
+Gegeben ist die Klasse Sensor. Schreiben Sie einen Konstruktor, der den Zustand vollständig initialisiert.
+
+class Sensor {
+String id;
+int wert;
+}
+
+
+
+Code:
+
+public class Sensor {
+    String id;  // Instanzvariable zur Speicherung der Sensor-ID
+    int wert;   // Instanzvariable zur Speicherung des Sensor-Werts
+
+    // Standardkonstruktor ohne Parameter
+    Sensor() {
+        // Aufruf des anderen Konstruktors mit vordefinierten Werten
+        this("EineAndereId", 42);
+    }
+
+    // Konstruktor mit Parametern zur vollständigen Initialisierung
+    Sensor(String id, int wert) {
+        // Initialisierung der Instanzvariablen mit den übergebenen Werten
+        this.id = id;
+        this.wert = wert;
+    }
+
+    public static void main(String[] args) {
+        // Erstellung eines Sensor-Objekts mit spezifischen Werten
+        Sensor sensor = new Sensor("MeineID", 23);
+    }
+}
+
