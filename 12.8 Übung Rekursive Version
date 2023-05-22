@@ -1,0 +1,57 @@
+Schreiben Sie eine rekursive Variante der folgenden Methode:
+String umdrehen(String text){
+String ergebnis = "";
+for ( int i = 0; i < text.length(); i++ ){
+ergebnis = text.charAt(i) + ergebnis;
+}
+return ergebnis;
+}
+
+– Rekursion vs. Iteration
+– Endrekursion: kein Kontext beim Aufruf
+
+
+Code:
+
+package kap12_modifizierer_static_rekursion;
+
+public class Umdrehen {
+    // Iterative Methode zum Umkehren des Textes
+    public String umdrehenIterativ(String text) {
+        if (text == null) {
+            throw new IllegalArgumentException("Ungültige Eingabe."); // Überprüfung auf null
+        }
+
+        String ergebnis = "";
+        for (int i = 0; i < text.length(); i++) {
+            ergebnis = text.charAt(i) + ergebnis; // Jedes Zeichen wird vor das bisherige Ergebnis gesetzt
+        }
+        return ergebnis;
+    }
+
+    // Rekursive Methode zum Umkehren des Textes
+    public String umdrehenRekursiv(String text) {
+        if (text == null) {
+            throw new IllegalArgumentException("Ungültige Eingabe."); // Überprüfung auf null
+        }
+        if (text.length() == 0) {
+            return ""; // Basisfall: Leerstring, daher wird ein leerer Text zurückgegeben
+        }
+        // Das erste Zeichen wird hinten an den umgedrehten Rest des Textes angehängt
+        return umdrehenRekursiv(text.substring(1)) + text.charAt(0);
+    }
+
+    public static void main(String[] args) {
+        Umdrehen umdrehen = new Umdrehen();
+        // Aufruf der iterativen Methode und Ausgabe des umgedrehten Ergebnisses
+        System.out.println(umdrehen.umdrehenIterativ("Hallo Welt"));
+        // Aufruf der rekursiven Methode und Ausgabe des umgedrehten Ergebnisses
+        System.out.println(umdrehen.umdrehenRekursiv("Hallo Welt"));
+    }
+}
+
+
+Ausgabe:
+
+tleW ollaH
+tleW ollaH
