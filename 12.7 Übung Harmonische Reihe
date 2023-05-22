@@ -1,0 +1,61 @@
+Schreiben Sie eine rekursive Methode, die die harmonische Reihe bis n berechnet und als float
+zurückgibt:
+
+f (n) = 1 + 1/2 + 1/3 + ⋅ ⋅ ⋅ + 1/n
+
+
+Machen Sie aus der rekursiven Lösung zur vorherigen Aufgabe (harmonische Reihe) eine iterative Lösung.
+
+
+Code:
+
+public class HarmonischeReihe {
+
+    // Iterative Lösung zur Berechnung der harmonischen Reihe
+    public float harmonischeReiheIterativ(int n) {
+        // Überprüfung, ob n eine positive Zahl ist
+        if (n <= 0) {
+            throw new IllegalArgumentException("Nur positive Eingabe erlaubt.");
+        }
+
+        float wert = 0;
+        // Iteration von 1 bis n
+        for (int i = 1; i <= n; i++) {
+            // Hinzufügen des inversen Werts von i zur Summe
+            wert += 1.0f / i;
+        }
+        return wert;
+    }
+
+    // Rekursive Lösung zur Berechnung der harmonischen Reihe
+    public float harmonischeReiheRekursiv(int n) {
+        // Überprüfung, ob n eine positive Zahl ist
+        if (n <= 0) {
+            throw new IllegalArgumentException("Nur positive Eingabe erlaubt.");
+        }
+
+        // Rekursionsbasis: Wenn n gleich 1 ist, ist der Wert 1
+        if (n == 1) {
+            return 1;
+        }
+        // Rekursiver Aufruf: Hinzufügen des inversen Werts von n und Aufruf für n-1
+        return 1.0f / n + harmonischeReiheRekursiv(n - 1);
+    }
+
+    public static void main(String[] args) {
+        // Erzeugung eines Objekts der Klasse HarmonischeReihe
+        HarmonischeReihe hr = new HarmonischeReihe();
+        
+        // Aufruf der iterativen Methode und Ausgabe des Ergebnisses
+        System.out.println(hr.harmonischeReiheIterativ(5));
+        
+        // Aufruf der rekursiven Methode und Ausgabe des Ergebnisses
+        System.out.println(hr.harmonischeReiheRekursiv(5));
+    }
+}
+
+
+Ausgabe:
+
+2.2833333
+2.2833333
