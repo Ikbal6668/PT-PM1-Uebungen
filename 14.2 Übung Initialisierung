@@ -6,4 +6,6 @@ Initialisieren Sie das Array mit 5 Elementen.
 
 Code:
 
-double[] array = {1.0, 2.0, 3.0, 4.0, 5.0};
+public static void main(String[] args) {
+  doubleArray = new double[5];
+}
