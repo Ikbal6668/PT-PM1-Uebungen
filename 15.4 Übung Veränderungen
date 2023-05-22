@@ -1,0 +1,37 @@
+Schreiben Sie eine Methode, die für eine beliebige Eingabezeichenkette folgende Veränderun-
+gen vornimmt:
+* Ersetzen: "e" -> "E"
+* Entfernen aller Leerzeichen an Anfang und Ende
+* Anfügen der Länge der Eingabezeichenkette am Ende
+Beispiel:
+" Mein Heim! " → "MEin HEim!13"
+– Konkatenation, Vergleich
+
+
+Code:
+
+public class StringModifier {
+    public static String modifyString(String input) {
+        // Ersetzen: "e" -> "E"
+        String replaced = input.replace("e", "E");
+
+        // Leerzeichen am Anfang und Ende entfernen
+        String trimmed = replaced.trim();
+
+        // Anfügen der Länge der Eingabezeichenkette am Ende
+        int length = trimmed.length();
+        String result = trimmed + length;
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String input = " Mein Heim! ";
+        String modified = modifyString(input);
+        System.out.println("Modified String: " + modified);
+    }
+}
+
+
+Ausgabe:
+Modified String: MEin HEim!10
