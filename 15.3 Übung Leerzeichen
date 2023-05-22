@@ -1,0 +1,33 @@
+Schreiben Sie eine Methode
+String trimVorne(String text),
+die alle Leerzeichen am Beginn des Strings entfernt. Verwenden Sie substring.
+
+– contains(), replace()
+
+Code:
+
+public class StringHelper {
+    public static String trimVorne(String text) {
+        if (text == null) { // Überprüfen, ob der Text null ist
+            return null; // Wenn ja, wird null zurückgegeben
+        }
+
+        int length = text.length(); // Länge des Textes bestimmen
+        int index = 0; // Index des ersten Nicht-Leerzeichens
+        while (index < length && text.charAt(index) == ' ') {
+            index++; // Den Index solange erhöhen, bis das erste Nicht-Leerzeichen erreicht ist
+        }
+
+        if (index == 0) { // Wenn der Index gleich 0 ist, gibt es keine Leerzeichen am Anfang
+            return text; // Der ursprüngliche Text wird unverändert zurückgegeben
+        }
+
+        return text.substring(index); // Der Teil des Textes ab dem ersten Nicht-Leerzeichen wird zurückgegeben
+    }
+
+    public static void main(String[] args) {
+        String text = "   Hello, World!"; // Beispieltext mit Leerzeichen am Anfang
+        String trimmedText = trimVorne(text); // Aufruf der Methode trimVorne, um Leerzeichen am Anfang zu entfernen
+        System.out.println("Trimmed Text: '" + trimmedText + "'"); // Ausgabe des bereinigten Textes
+    }
+}
