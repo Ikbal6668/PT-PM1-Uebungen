@@ -1,0 +1,34 @@
+Zeichnen Sie ein Diagramm, das den Zustand nach folgenden Anweisungen wiedergibt:
+Zaehler z1 = new Zaehler();
+Zaehler z2 = new Zaehler();
+z2.zaehlerstand = 23;
+z1.zaehlerstand = 42;
+z2.zaehlerstand = z1.zaehlerstand;
+
+
+Code: 
+
+public class Zaehler {
+    int zaehlerstand; // Instanzvariable für den Zählerstand
+
+    public static void main(String[] args) {
+        Zaehler z1 = new Zaehler(); // Erstelle ein Objekt z1 vom Typ Zaehler
+        Zaehler z2 = new Zaehler(); // Erstelle ein Objekt z2 vom Typ Zaehler
+
+        z2.zaehlerstand = 23; // Setze den Zählerstand von z2 auf 23
+        z1.zaehlerstand = 42; // Setze den Zählerstand von z1 auf 42
+        z2.zaehlerstand = z1.zaehlerstand; // Weise den Zählerstand von z1 an z2 zu
+
+        // Ausgabe des Zustands nach den Anweisungen
+        System.out.println("Zustand nach den Anweisungen:");
+        System.out.println("z1.zaehlerstand = " + z1.zaehlerstand);
+        System.out.println("z2.zaehlerstand = " + z2.zaehlerstand);
+    }
+}
+
+
+Ausgabe:
+
+Zustand nach den Anweisungen:
+z1.zaehlerstand = 42
+z2.zaehlerstand = 42
