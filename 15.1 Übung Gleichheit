@@ -1,0 +1,24 @@
+Der erste Ausdruck liefert true, der zweite false. Woran könnte das liegen?
+"Hallo" == "Hallo"
+new String("Hallo") == new String("Hallo")
+
+– length(), charAt(), indexOf
+
+
+Lösung:
+
+Der Ausdruck `String1 == String2` vergleicht die Referenzen der beiden `String`-Objekte.
+Das bedeutet, es wird überprüft, ob die beiden Variablen auf dasselbe Objekt im Speicher verweisen. 
+
+Bei `String1 == String2` ist das Ergebnis `true`, wenn beide Variablen auf dasselbe Objekt im Speicher 
+verweisen, andernfalls ist das Ergebnis `false`.
+
+Im Fall des Ausdrucks `"Hallo" == "Hallo"` handelt es sich um String-Literale, die im String-Pool 
+gespeichert werden. Daher verweisen beide Ausdrücke auf dasselbe `String`-Objekt im Speicher, und das Ergebnis ist `true`.
+
+Im Fall des Ausdrucks `new String("Hallo") == new String("Hallo")` werden jedoch zwei separate 
+`String`-Objekte erstellt, da der `new`-Operator verwendet wird. Obwohl die Inhalte der beiden `String`-Objekte gleich sind, 
+verweisen die Variablen auf unterschiedliche Objekte im Speicher. Daher ist das Ergebnis `false`, da die Referenzen nicht gleich sind.
+
+Wenn Sie den Inhalt der `String`-Objekte vergleichen möchten, sollten Sie die Methode `equals()` verwenden, z.B. `String1.equals(String2)`. 
+Diese Methode vergleicht den Inhalt der `String`-Objekte anstelle der Referenzen.
