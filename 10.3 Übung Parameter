@@ -1,0 +1,35 @@
+Schreiben Sie in Zaehler eine Methode erhohen(). Die Methode hat zwei Parameter: einen
+Wahrheitswert und eine Ganzzahl. Ist der Wahrheitswert wahr, wird der zaehlerstand um
+den Wert der Ganzzahl erhöht.
+
+– Selbstreferenz: this
+
+Code:
+
+public class Zaehler {
+    private int zaehlerstand; // Eigenschaft für den Zählerstand
+
+    public void erhoehen(boolean wahrheitswert, int zahl) {
+        if (wahrheitswert) {
+            zaehlerstand += zahl; // Erhöhe den Zählerstand um den Wert der Ganzzahl
+        }
+    }
+
+    public static void main(String[] args) {
+        Zaehler zaehler = new Zaehler(); // Erstellen eines Zähler-Objekts
+
+        // Zählerstand vor der Erhöhung ausgeben
+        System.out.println("Zählerstand vor der Erhöhung: " + zaehler.zaehlerstand);
+
+        zaehler.erhoehen(true, 5); // Aufruf der Methode erhoehen() mit wahrheitswert = true und zahl = 5
+
+        // Zählerstand nach der Erhöhung ausgeben
+        System.out.println("Zählerstand nach der Erhöhung: " + zaehler.zaehlerstand);
+    }
+}
+
+
+Ausgabe:
+
+Zählerstand vor der Erhöhung: 0
+Zählerstand nach der Erhöhung: 5
