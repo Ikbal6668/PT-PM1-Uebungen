@@ -1,0 +1,24 @@
+Verwenden Sie eine erweiterte for-Schleife (oder for-each-Schleife), um das Array zu durch-
+laufen und alle Elemente auf der Konsole auszugeben.
+
+
+Code:
+
+public class Übung {
+    public static void main(String[] args) {
+
+        int[] zahlen = {1, 2, 3, 4, 5};
+
+        for (int zahl : zahlen) {
+            System.out.println(zahl);
+        }
+    }
+}
+
+Ausgabe:
+
+1
+2
+3
+4
+5
