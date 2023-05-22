@@ -1,0 +1,53 @@
+Schreiben Sie für die Klasse Bruch eine Methode istKleiner() mit zwei Parametern vom
+Typ int: zaehler und nenner. Die Methode soll einen Wahrheitswert zurückliefern: wahr, wenn
+der Bruch selbst kleiner ist, als der Bruch, der sich aus den Parametern ergibt falsch, wenn der
+Bruch selbst größer/gleich ist, als der Bruch, der sich aus den Parametern ergibt.
+
+
+
+Code:
+
+public class Bruch {
+    private int zaehler; // Zähler des Bruchs
+    private int nenner; // Nenner des Bruchs
+
+    public Bruch(int zaehler, int nenner) {
+        this.zaehler = zaehler;
+        this.nenner = nenner;
+    }
+
+    public boolean istKleiner(int vergleichsZaehler, int vergleichsNenner) {
+        // Berechne den Wert des aktuellen Bruchs
+        double bruchWert = (double) this.zaehler / this.nenner;
+
+        // Berechne den Wert des Vergleichsbruchs
+        double vergleichsBruchWert = (double) vergleichsZaehler / vergleichsNenner;
+
+        // Überprüfe, ob der aktuelle Bruch kleiner ist als der Vergleichsbruch
+        if (bruchWert < vergleichsBruchWert) {
+            return true; // Der Bruch ist kleiner
+        } else {
+            return false; // Der Bruch ist größer oder gleich
+        }
+    }
+
+    public static void main(String[] args) {
+        // Erstelle ein Bruchobjekt
+        Bruch bruch = new Bruch(3, 4);
+
+        // Setze Werte für den Vergleichsbruch
+        int vergleichsZaehler = 1;
+        int vergleichsNenner = 2;
+
+        // Rufe die Methode istKleiner() auf und speichere das Ergebnis
+        boolean istKleiner = bruch.istKleiner(vergleichsZaehler, vergleichsNenner);
+
+        // Gib das Ergebnis auf der Konsole aus
+        System.out.println("Ist der Bruch kleiner als " + vergleichsZaehler + "/" + vergleichsNenner + "? " + istKleiner);
+    }
+}
+
+
+Ausgabe:
+
+Ist der Bruch kleiner als 1/2? false
