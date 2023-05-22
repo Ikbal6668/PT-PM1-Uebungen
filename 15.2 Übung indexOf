@@ -1,0 +1,32 @@
+Schreiben Sie eine eigene Methode
+int indexOf(String text, char zeichen),
+die wie indexOf von String arbeitet, diese Methode aber nicht verwendet.
+
+– trim(), substring()
+
+
+Code:
+
+public class StringHelper {
+    public static int indexOf(String text, char zeichen) {
+        if (text == null) { // Überprüfen, ob der Text null ist
+            return -1; // Wenn ja, wird -1 zurückgegeben, um anzuzeigen, dass das Zeichen nicht gefunden wurde
+        }
+
+        int length = text.length(); // Länge des Textes bestimmen
+        for (int i = 0; i < length; i++) { // Durchlaufen des Textes Zeichen für Zeichen
+            if (text.charAt(i) == zeichen) { // Überprüfen, ob das aktuelle Zeichen mit dem gesuchten Zeichen übereinstimmt
+                return i; // Wenn ja, wird der Index zurückgegeben
+            }
+        }
+
+        return -1; // Wenn das Zeichen nicht gefunden wurde, wird -1 zurückgegeben
+    }
+
+    public static void main(String[] args) {
+        String text = "Hello, World!"; // Beispieltext
+        char zeichen = 'o'; // Gesuchtes Zeichen
+        int index = indexOf(text, zeichen); // Aufruf der Methode indexOf, um den Index des Zeichens im Text zu finden
+        System.out.println("Index of '" + zeichen + "' in '" + text + "': " + index); // Ausgabe des Ergebnisses
+    }
+}
