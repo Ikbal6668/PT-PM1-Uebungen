@@ -1,0 +1,33 @@
+class Zaehler {
+int zaehlerstand;
+}
+Schreiben Sie eine Methode inkrement() zum Erhöhen des Zählerstandes der Klasse Zaehler.
+Rufen Sie die Methode inkrement() zum Erhöhen für ein Zähler-Objekt auf.
+
+– lokale Variablen
+• Argument und Parameter
+– Call-Sequence mit Parametern
+
+NICHT SICHER:
+
+public class Zaehler {
+    int zaehlerstand; // Eigenschaft für den Zählerstand
+
+    public void inkrement() {
+        zaehlerstand++; // Inkrementiere den Zählerstand um 1
+    }
+
+    public static void main(String[] args) {
+        Zaehler zaehler = new Zaehler(); // Erstellen eines Zähler-Objekts
+
+        // Zählerstand vor dem Inkrementieren ausgeben
+        System.out.println("Zählerstand vor dem Inkrementieren: " + zaehler.zaehlerstand);
+
+        zaehler.inkrement(); // Aufruf der Methode inkrement() für das Zähler-Objekt
+
+        // Zählerstand nach dem Inkrementieren ausgeben
+        System.out.println("Zählerstand nach dem Inkrementieren: " + zaehler.zaehlerstand);
+    }
+}
+
+
