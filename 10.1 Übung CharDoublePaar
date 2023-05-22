@@ -1,0 +1,51 @@
+Entwerfen Sie eine Klasse CharDoublePaar. Die Klasse hat zwei Eigenschaften: ein Zeichen
+und eine Gleitkommazahl. Geben Sie den Quellcode an. Zeichnen Sie ein Klassendiagramm.
+
+– Single Responsibility
+• Methoden
+– (Processing) Prozeduren vs. Methoden
+– Name, Parameterliste, Rückgabetyp
+– Aufrufen, Call-Sequence
+
+Code:
+
+public class CharDoublePaar {
+    private char zeichen; // Eigenschaft für das Zeichen
+    private double gleitkommazahl; // Eigenschaft für die Gleitkommazahl
+
+    public CharDoublePaar(char zeichen, double gleitkommazahl) {
+        this.zeichen = zeichen; // Initialisierung des Zeichens mit dem übergebenen Wert
+        this.gleitkommazahl = gleitkommazahl; // Initialisierung der Gleitkommazahl mit dem übergebenen Wert
+    }
+
+    public char getZeichen() {
+        return zeichen; // Rückgabe des Zeichens
+    }
+
+    public void setZeichen(char zeichen) {
+        this.zeichen = zeichen; // Setzen des Zeichens mit dem übergebenen Wert
+    }
+
+    public double getGleitkommazahl() {
+        return gleitkommazahl; // Rückgabe der Gleitkommazahl
+    }
+
+    public void setGleitkommazahl(double gleitkommazahl) {
+        this.gleitkommazahl = gleitkommazahl; // Setzen der Gleitkommazahl mit dem übergebenen Wert
+    }
+}
+
+Das Klassendiagramm für die Klasse CharDoublePaar sieht folgendermaßen aus:
+
++----------------+
+| CharDoublePaar |
++----------------+
+| - zeichen: char |
+| - gleitkommazahl: double |
++----------------+
+| + CharDoublePaar(zeichen: char, gleitkommazahl: double) |
+| + getZeichen(): char |
+| + setZeichen(zeichen: char): void |
+| + getGleitkommazahl(): double |
+| + setGleitkommazahl(gleitkommazahl: double): void |
++----------------+
