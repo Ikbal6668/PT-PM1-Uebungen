@@ -1,0 +1,23 @@
+Gegeben sind zwei Bruch-Objekte b1 und b2. Es wird b1.subtrahiereDavon(b2) in der main()-
+Methode des Programms aufgerufen. Zu Beginn der Methode ist ein Breakpoint gesetzt. Skizzieren
+Sie Heap und Stack an dem Breakpoint.
+
+• Konstruktor: Syntax, Aufruf durch new
+
+
+
+
+Code (NICHT SICHER):
+
+public class Main {
+    public static void main(String[] args) {
+        // Erzeugung der Bruch-Objekte
+        Bruch b1 = new Bruch(3, 4);  // Objekt b1 wird auf dem Heap erstellt
+        Bruch b2 = new Bruch(1, 2);  // Objekt b2 wird auf dem Heap erstellt
+
+        // Aufruf der Methode subtrahiereDavon() von b1
+        b1.subtrahiereDavon(b2);
+
+        // Weitere Code-Anweisungen...
+    }
+}
