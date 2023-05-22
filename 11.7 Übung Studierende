@@ -1,0 +1,46 @@
+Gegeben sind die Klassen Studierender und Studierendenausweis. Wann und wo ändern sich
+die Werte von name, ausweis und matrikelnummer, wenn man ein neues Objekt von Studierender
+erzeugt?
+
+public class Studierender {
+String name;
+Studierendenausweis ausweis;
+public Studierender(String name) {
+this.name = name;
+}
+32
+void erzeugeStudierendenAusweis() {
+ausweis = new Studierendenausweis();
+ausweis.generiereMatrikelnummer();
+}
+public String getName() {
+return name;
+}
+}
+public class Studierendenausweis {
+int matrikelnummer;
+public Studierendenausweis() {
+matrikelnummer = -1;
+}
+public void generiereMatrikelnummer() {
+matrikelnummer =
+(int)(Math.random()*10000);
+}
+}
+
+Lösung:
+
+Wenn ein neues Objekt von `Studierender` erzeugt wird, ändern sich die Werte von `name`, `ausweis` und `matrikelnummer` wie folgt:
+
+1. `name`: Der Wert von `name` wird durch den Konstruktor von `Studierender` gesetzt. Der übergebene Name wird dem `name`-Attribut des Objekts zugewiesen.
+
+2. `ausweis`: Zu Beginn hat das `ausweis`-Attribut den Wert `null`. Wenn die Methode `erzeugeStudierendenAusweis()` aufgerufen wird, wird ein neues Objekt von
+`Studierendenausweis` erzeugt und dem `ausweis`-Attribut zugewiesen.
+
+3. `matrikelnummer`: Beim Erzeugen eines neuen Objekts von `Studierendenausweis` wird die `matrikelnummer` zunächst auf den Wert `-1` gesetzt. Wenn die Methode
+`generiereMatrikelnummer()` aufgerufen wird, wird eine zufällige Matrikelnummer generiert und dem `matrikelnummer`-Attribut zugewiesen.
+
+
+Zusammenfassend lässt sich sagen, dass der Wert von `name` beim Erzeugen eines neuen `Studierender`-Objekts gesetzt wird. Der Wert von `ausweis` 
+wird bei Aufruf der Methode `erzeugeStudierendenAusweis()` geändert und ein neues `Studierendenausweis`-Objekt wird erstellt. Der Wert von `matrikelnummer` 
+wird dann generiert, wenn die Methode `generiereMatrikelnummer()` aufgerufen wird.
