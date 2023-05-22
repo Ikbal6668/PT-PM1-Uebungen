@@ -1,0 +1,47 @@
+Überarbeiten Sie die vorherige Lösung so, dass die Konstruktorparameter und die Objektvariablen
+je die gleichen Bezeichner verwenden. Welche Werte haben die Variablen, wenn Sie keinen Kon-
+struktor anbieten nach Objekterzeugung?
+
+• Default-Konstruktor vs. Konstruktor ohne Parameter
+• Defaultwerte, Objektvariablen nie nicht initialisiert
+• Kopier-Konstruktor
+• Aufruf eines anderen Konstruktors mit this
+
+
+Code:
+
+public class Sensor {
+    String id;
+    int wert;
+
+    Sensor(String id, int wert) {
+        this.id = id;
+        this.wert = wert;
+    }
+
+    Sensor() {
+        this("", 0);  // Aufruf des anderen Konstruktors mit Standardwerten
+    }
+
+    public static void main(String[] args) {
+        Sensor sensor = new Sensor();
+        System.out.println(sensor.id);   // Ausgabe: ""
+        System.out.println(sensor.wert); // Ausgabe: 0
+    }
+}
+
+Beschreibung:
+
+In dieser Version werden die Konstruktorparameter id und wert verwendet, die auch die Namen der Objektvariablen sind.
+
+Der Konstruktor Sensor(String id, int wert) initialisiert die Objektvariablen id und wert mit den übergebenen Werten.
+
+Der Konstruktor Sensor() wird als Default-Konstruktor bezeichnet, da er keine Parameter hat. In diesem Fall wird der andere Konstruktor Sensor(String id, int wert) mit leeren Werten ("" für id und 0 für wert) aufgerufen. Dadurch erhalten die Objektvariablen standardmäßige Initialisierungswerte.
+
+In der main()-Methode wird ein Sensor-Objekt ohne Konstruktorparameter erstellt. Da der Default-Konstruktor aufgerufen wird, haben die Objektvariablen id und wert die Standardwerte ("" und 0).
+
+Die Ausgaben der System.out.println()-Anweisungen zeigen die Werte der Objektvariablen nach der Objekterzeugung. In diesem Fall werden "" für id und 0 für wert ausgegeben.
+
+Diese überarbeitete Version berücksichtigt die gleichen Bezeichner für die Konstruktorparameter und Objektvariablen und zeigt, wie die Variablenwerte aussehen, wenn kein spezifischer Konstruktor verwendet wird.
+
+
