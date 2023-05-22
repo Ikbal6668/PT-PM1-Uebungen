@@ -1,0 +1,38 @@
+Schreiben Sie eine überladene Variante der Methode erhoehen(), die nur den Wahrheitswert als
+Parameter hat. Ist der Wert wahr, wird immer um 1 erhöht.
+
+• Klassendiagramm: Methoden
+
+
+Code:
+
+
+public class Zaehler {
+    int zaehlerstand;
+
+    // Überladene Methode: erhöhen() mit boolean-Parameter und int-Parameter
+    void erhoehen(boolean wahrheitswert, int ganzzahl) {
+        if (wahrheitswert) {
+            zaehlerstand += ganzzahl;
+        }
+    }
+
+    // Überladene Methode: erhöhen() mit nur einem boolean-Parameter
+    void erhoehen(boolean wahrheitswert) {
+        if (wahrheitswert) {
+            zaehlerstand += 1;
+        }
+    }
+
+    public static void main(String[] args) {
+        Zaehler zaehler = new Zaehler();
+        
+        // Aufruf der überladenen Methoden, um den Zählerstand zu ändern
+        
+        // erhoehen(false, 5): Wahrheitswert ist false, daher wird der Zählerstand nicht verändert
+        zaehler.erhoehen(false, 5);
+        
+        // erhoehen(true): Wahrheitswert ist true, daher wird der Zählerstand um 1 erhöht
+        zaehler.erhoehen(true);
+    }
+}
