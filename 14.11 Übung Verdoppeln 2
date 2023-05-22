@@ -4,7 +4,8 @@ hinteren Hälfte des neues Arrays stehen. Verwenden Sie System.arraycopy().
 
 Code:
 
- private String[] verdoppeln2(String[] eingabe) {
-        String[] ergebnis = new String[eingabe.length * 2];
-        System.arraycopy(eingabe, 0, ergebnis, ergebnis.length / 2, eingabe.length);
-        return ergebnis;
+    public static void main(String[] args) {
+        for (String s : arrayVL.verdoppeln2(new String[]{"Eins", "Zwei", "Drei"})) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
