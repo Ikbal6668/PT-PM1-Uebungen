@@ -1,0 +1,36 @@
+Erzeugen Sie ein Zaehler-Objekt und geben Sie den Wert der Objektvariablen auf der Konsole aus.
+Weisen Sie der Variablen einen neuen Wert zu und geben Sie sie wieder aus.
+
+• Objektvariablen vs. Referenz-/primitive Variablen
+
+
+Code:
+
+public class Counter {
+    private int value; // Objektvariable zur Speicherung des Zählerwerts
+
+    public Counter(int initialValue) {
+        value = initialValue; // Initialisierung des Zählerwerts mit dem übergebenen Startwert
+    }
+
+    public void setValue(int newValue) {
+        value = newValue; // Setzen eines neuen Zählerwerts
+    }
+
+    public int getValue() {
+        return value; // Rückgabe des aktuellen Zählerwerts
+    }
+
+    public static void main(String[] args) {
+        Counter counter = new Counter(5); // Erzeugen des Zähler-Objekts mit dem Startwert 5
+        System.out.println("Der aktuelle Wert des Zählers ist: " + counter.getValue());
+
+        counter.setValue(10); // Setzen eines neuen Zählerwerts
+        System.out.println("Der neue Wert des Zählers ist: " + counter.getValue());
+    }
+}
+
+Ausgabe:
+
+Der aktuelle Wert des Zählers ist: 5
+Der neue Wert des Zählers ist: 10
