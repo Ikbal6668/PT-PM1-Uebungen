@@ -1,0 +1,40 @@
+Schreiben Sie eine Prozedur verdoppeln(String [] texte), die ein Array von Strings verdop-
+pelt und dabei jeden Text zweimal hintereinander verwendet:
+{"Eins", "Zwei", "Drei"} → {"Eins", "Eins", "Zwei", "Zwei", "Drei", "Drei"}
+
+
+Code:
+
+public class Verdoppeln {
+    public static void main(String[] args) {
+        String[] texte = {"Eins", "Zwei", "Drei"};
+        texte = verdoppeln(texte);  // Aufruf der verdoppeln-Methode
+
+        // Ausgabe des verdoppelten Arrays
+        for (String text : texte) {
+            System.out.println(text);
+        }
+    }
+
+    public static String[] verdoppeln(String[] texte) {
+        int originalLength = texte.length;
+        String[] verdoppelteTexte = new String[originalLength * 2];  // Neues Array mit doppelter Länge erstellen
+
+        for (int i = 0; i < originalLength; i++) {
+            verdoppelteTexte[i * 2] = texte[i];  // Element an gerader Position mit Originaltext füllen
+            verdoppelteTexte[i * 2 + 1] = texte[i];  // Element an ungerader Position mit Originaltext füllen
+        }
+
+        return verdoppelteTexte;  // Verdoppeltes Array zurückgeben
+    }
+}
+
+
+Ausgabe:
+
+Eins
+Eins
+Zwei
+Zwei
+Drei
+Drei
