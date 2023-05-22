@@ -1,0 +1,79 @@
+Schreiben Sie eine Klasse Rasenmaeher.
+– Ein Rasenmäher hat ein Tankvolumen in Litern (float) und einen aktuellen Tankinhalt in Li-
+tern (float).
+– Schreiben Sie einen Konstruktor mit Parametern zur Initialisierung beider Felder. Ergänzen Sie
+einen überladenen Konstruktor bei dem Sie für einen leeren Tank nur das Volumen angeben.
+Rufen Sie darin intern wieder den ersten Konstruktor auf.
+– Ergänzen Sie eine Methode float berechneVerbrauch(float), die für eine angegebene
+Fläche in Quadratmetern den Benzinverbrauch berechnet. Der durchschnittliche Verbrauch
+liegt bei 0.005 l
+qm .
+– Ergänzen Sie eine Methode void maehen(float), die für eine angegebene Fläche in Qua-
+dratmetern den Benzinstand aktualisiert.
+– Reagieren Sie überall in der Klasse bei ungültigen Argumenten mit einer IllegalArgumentException.
+Bonus: Zeichnen Sie den Methoden-Stack für einen angenommenen Breakpoint in der Methode
+berechneVerbrauch().
+
+
+Code:
+
+public class Rasenmaeher {
+
+    /**
+     * Inhalt des Tanks (Benzin) in Litern
+     */
+    float tankinhalt;
+
+    /**
+     * Soviel Benzin passt maximal in den Tank.
+     */
+    float tankvolumen;
+
+    /**
+     * Konstruktion eines Rasenmähers mit einem leeren Tank.
+     */
+    Rasenmaeher(float tankvolumen) {
+        this(tankvolumen, 0); // Ruft den anderen Konstruktor mit einem leeren Tank auf
+    }
+
+    /**
+     * Konstruktion eines Rasenmähers mit einer initialen Tankfüllung
+     */
+    Rasenmaeher(float tankvolumen, float benzinMenge) {
+        this.tankvolumen = tankvolumen; // Initialisiert das Tankvolumen
+        this.tankinhalt = benzinMenge; // Initialisiert den Tankinhalt
+        if (tankinhalt > tankvolumen) {
+            throw new IllegalArgumentException("Initiale Tankbefüllung darf Tankvolumen nicht überschreiten.");
+        }
+    }
+
+    /**
+     * Mähen einer bestimmten Fläche
+     */
+    void maehen(float flaeche) {
+        float verbrauch = berechneVerbrauch(flaeche); // Berechnet den Benzinverbrauch für die Fläche
+        if (verbrauch > tankinhalt) {
+            throw new IllegalArgumentException("Tok, tok ..... toooook. Motor aus.");
+        }
+        tankinhalt -= verbrauch; // Reduziert den Tankinhalt um den Verbrauch
+        System.out.println("Fläche von " + flaeche + " m^2 gemäht. Verbrauch: " + verbrauch + " Liter.");
+    }
+
+    /**
+     * Berechnet den Verbrauch für die angegebene Fläche bei einer Verbrauchsannahme von 0.005l/qm.
+     */
+    private float berechneVerbrauch(float flaeche) {
+        float verbrauchProQm = 0.005f; // Verbrauch pro Quadratmeter
+        return verbrauchProQm * flaeche; // Berechnet den Gesamtverbrauch für die Fläche
+    }
+
+    public static void main(String[] args) {
+        Rasenmaeher rasenmaeher = new Rasenmaeher(2, 1.5f); // Erzeugt ein Rasenmäher-Objekt mit Tankvolumen 2 und initialer Tankfüllung 1.5
+        rasenmaeher.maehen(100); // Ruft die Methode zum Mähen auf und gibt die Fläche an
+    }
+}
+
+
+Ausgabe:
+
+Fläche von 100.0 m^2 gemäht. Verbrauch: 0.5 Liter.
