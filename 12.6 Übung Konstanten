@@ -1,0 +1,27 @@
+Geben Sie in der Klasse Main die Deklaration und Initialisierung einer Konstante für eine obere
+Grenze für Gleitkommazahlen (Wert 23.42) an.
+
+– statische Methoden (kein this)
+– main()-Methode
+– statischer Import
+• Rekursion
+– Reduktion auf einfacheres Problem (Selbstbezüglichkeit)
+– Rekursionsende
+
+
+Code:
+
+public class Main {
+    // Deklaration und Initialisierung der Konstante für die obere Grenze von Gleitkommazahlen
+    public static final double OBERE_GRENZE = 23.42;
+
+    public static void main(String[] args) {
+        // Ausgabe der oberen Grenze von Gleitkommazahlen
+        System.out.println("Die obere Grenze von Gleitkommazahlen ist " + OBERE_GRENZE);
+    }
+}
+
+
+Ausgabe:
+
+Die obere Grenze von Gleitkommazahlen ist 23.42
