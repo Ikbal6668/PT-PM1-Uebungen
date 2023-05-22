@@ -1,0 +1,50 @@
+Verändern Sie die Klasse Sensor so, dass der Zustand eines Sensor-Objektes nicht von außen
+verändert werden kann:
+
+class Sensor {
+String id;
+int wert
+Sensor(String id, int wert){
+this.id = id;
+this.wert = wert;
+}
+}
+
+
+Code:
+
+package kap12_modifizierer_static_rekursion;
+
+public class Sensor {
+    private String id;
+    private int wert;
+
+    public Sensor(String id, int wert) {
+        this.id = id;
+        this.wert = wert;
+    }
+
+    public void reset() {
+        this.wert = 23;
+    }
+
+    public static int getBetrag(int zahl) {
+        return Math.abs(zahl);
+    }
+
+    public static void main(String[] args) {
+        Sensor sensor = new Sensor("MeineID", 23);
+        System.out.println(Sensor.getBetrag(-23));
+    }
+
+}
+
+
+Ausgabe:
+
+23
+
+
+
+
+
