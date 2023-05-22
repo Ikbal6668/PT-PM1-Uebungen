@@ -1,0 +1,40 @@
+Schreiben Sie Code mit einer Methode und zwei Variablen mit dem gleichen Bezeichner, der den-
+noch kompiliert.
+
+• Bindung von Variablen (von-innen-nach-außen)
+• Überladen von Methoden (analog Überladen von Prozeduren)
+– gleicher Bezeichner, unterschiedliche Parameterlisten
+– Polymorphismus
+
+
+Code:
+
+public class Example {
+    public static void main(String[] args) {
+        Example example = new Example();
+        int x = 5;
+        double y = 3.14;
+
+        // Aufruf der überladenen Methode mit int-Parameter
+        example.myMethod(x);
+
+        // Aufruf der überladenen Methode mit double-Parameter
+        example.myMethod(y);
+    }
+
+    // Überladene Methode mit int-Parameter
+    public void myMethod(int value) {
+        System.out.println("myMethod mit int-Parameter aufgerufen: " + value);
+    }
+
+    // Überladene Methode mit double-Parameter
+    public void myMethod(double value) {
+        System.out.println("myMethod mit double-Parameter aufgerufen: " + value);
+    }
+}
+
+
+Ausgabe:
+
+myMethod mit int-Parameter aufgerufen: 5
+myMethod mit double-Parameter aufgerufen: 3.14
