@@ -1,0 +1,39 @@
+Zeigen Sie durch ein Code-Beispiel, dass man eine for-each-Schleife nicht für den schreiben-
+den Zugriff auf ein Array verwenden kann.
+
+• System.arraycopy()
+• Array.copyOf()
+
+
+Code:
+
+import java.util.Arrays;
+
+public class Übung {
+    public static void main(String[] args) {
+
+        int[] zahlen = {1, 2, 3, 4, 5};
+
+// Kopie des Arrays erstellen
+        int[] kopie = Arrays.copyOf(zahlen, zahlen.length);
+
+// Werte der Kopie ändern
+        for (int i = 0; i < kopie.length; i++) {
+            kopie[i] = kopie[i] * 2;
+        }
+
+// Ausgabe der Kopie
+        for (int zahl : kopie) {
+            System.out.println(zahl);
+        }
+    }
+}
+
+
+Ausgabe:
+
+2
+4
+6
+8
+10
