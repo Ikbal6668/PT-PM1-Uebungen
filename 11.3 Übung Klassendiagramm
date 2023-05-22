@@ -1,0 +1,36 @@
+Zeichnen Sie ein Klassendiagramm für die folgende Klasse:
+class Student {
+int matikelnummer;
+boolean fuerKursAnmelden(String name){
+...
+return true;
+}
+}
+
+
+• Heap und Stack
+– Stack: Methodenaufrufe und lokale Variablen
+– Heap: Objekte
+– Methodenaufrufe → auf den Stack legen
+
+
+
+
+```
++------------------+
+|     Student      |
++------------------+
+| - matikelnummer: int  |
++------------------+
+| + fuerKursAnmelden(name: String): boolean |
++------------------+
+```
+
+Das Klassendiagramm besteht aus einer Klasse namens "Student" mit den folgenden Eigenschaften und Methoden:
+
+- `matikelnummer` (private): Eine Ganzzahl, die die Matrikelnummer des Studenten repräsentiert.
+- `fuerKursAnmelden(name: String): boolean` (public): Eine Methode, die einen Kursnamen als Parameter erhält und einen Wahrheitswert zurückgibt. Die Implementierung der Methode ist nicht im Klassendiagramm dargestellt (daher der Auslassungspunkt "..." im Methodenkörper).
+
+Die Pfeile im Klassendiagramm zeigen die Sichtbarkeit der Eigenschaften und Methoden an. Das Minuszeichen "-" zeigt an, dass die `matikelnummer`-Eigenschaft privat ist und nur innerhalb der Klasse zugänglich ist. Das Pluszeichen "+" zeigt an, dass die `fuerKursAnmelden`-Methode öffentlich ist und von anderen Klassen aus zugänglich ist.
+
+Das Klassendiagramm repräsentiert die Struktur der Klasse "Student" und zeigt die vorhandenen Eigenschaften und Methoden an. Es zeigt jedoch keine Details zur Implementierung der Methoden.
