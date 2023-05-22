@@ -1,0 +1,88 @@
+Schreiben Sie eine Klasse Zeichenkette, die einen String repräsentiert und diesen generieren
+kann (z.B. das Alphabet der Kleinbuchstaben). Die Klasse hat eine Objektvariable für die Ergebnis-
+Zeichenkette (String). Stellen Sie einen Getter dafür bereit. Schreiben Sie eine parameterlose Methode makeAlphabet(), die die Zeichenkette mit dem Alpha-
+bet befüllt. Verwenden Sie dazu eine rekursive Hilfsmethode, die Sie in der eigentlichen Methode
+passend aufrufen.
+Optional: Schreiben Sie eine zweite Methode (die intern ebenfalls rekursiv arbeitet), die die Zei-
+chenkette mit den Primzahlen von 1...n (kommagetrennt) befüllt. Dazu benötigen Sie eine weitere
+Hilfsmethode, die für eine Zahl prüft, ob sie eine Primzahl ist.
+
+
+
+Code:
+
+public class Zeichenkette {
+    private String ergebnisZeichenkette;
+
+    // Getter für die Ergebnis-Zeichenkette
+    public String getErgebnisZeichenkette() {
+        return ergebnisZeichenkette;
+    }
+
+    // Methode zum Generieren des Alphabets
+    public void makeAlphabet() {
+        ergebnisZeichenkette = generateAlphabetRecursive('a');
+    }
+
+    // Rekursive Hilfsmethode zum Generieren des Alphabets
+    private String generateAlphabetRecursive(char currentChar) {
+        if (currentChar > 'z') {
+            return "";
+        } else {
+            return currentChar + generateAlphabetRecursive((char) (currentChar + 1));
+        }
+    }
+
+    // Methode zum Generieren der Primzahlen von 1 bis n
+    public void makePrimzahlen(int n) {
+        ergebnisZeichenkette = generatePrimzahlenRecursive(1, n);
+    }
+
+    // Rekursive Hilfsmethode zum Generieren der Primzahlen
+    private String generatePrimzahlenRecursive(int currentNumber, int n) {
+        if (currentNumber > n) {
+            return "";
+        } else {
+            if (isPrimzahl(currentNumber)) {
+                if (currentNumber == 1) {
+                    return "1" + generatePrimzahlenRecursive(currentNumber + 1, n);
+                } else {
+                    return currentNumber + "," + generatePrimzahlenRecursive(currentNumber + 1, n);
+                }
+            } else {
+                return generatePrimzahlenRecursive(currentNumber + 1, n);
+            }
+        }
+    }
+
+    // Hilfsmethode zur Überprüfung, ob eine Zahl eine Primzahl ist
+    private boolean isPrimzahl(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Zeichenkette zeichenkette = new Zeichenkette();
+
+        // Generiere das Alphabet
+        zeichenkette.makeAlphabet();
+        System.out.println("Alphabet: " + zeichenkette.getErgebnisZeichenkette());
+
+        // Generiere die Primzahlen bis 20
+        zeichenkette.makePrimzahlen(20);
+        System.out.println("Primzahlen: " + zeichenkette.getErgebnisZeichenkette());
+    }
+}
+
+
+Ausgabe:
+
+Alphabet: abcdefghijklmnopqrstuvwxyz
+Primzahlen: 2,3,5,7,11,13,17,19,
