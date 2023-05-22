@@ -1,0 +1,32 @@
+Skizzieren Sie den Speicherzustand jeweils nach den folgenden beiden Anweisungen:
+int [] x = null;
+x = new int[3];
+
+• Referenzvariablen
+• Traversierung von Arrays
+– .length
+– for-Schleife
+
+
+Lösung:
+
+Nach der ersten Anweisung `int[] x = null;` sieht der Speicherzustand wie folgt aus:
+
+Code:
+x --> null
+
+
+
+Die Referenzvariable `x` ist mit dem Wert `null` initialisiert. Sie zeigt auf kein Objekt im Speicher.
+
+Nach der zweiten Anweisung `x = new int[3];` ändert sich der Speicherzustand wie folgt:
+
+
+Code:
+x --> [0, 0, 0]
+
+
+
+Die Referenzvariable `x` wird mit einem neuen Array-Objekt initialisiert. Das Array hat eine Größe von 3 Elementen vom Typ `int`. Jedes Element im Array wird standardmäßig mit dem Wert 0 initialisiert.
+
+Die Speicherrepräsentation zeigt, dass die Referenzvariable `x` nun auf das Array im Speicher zeigt, das die Elemente [0, 0, 0] enthält.
