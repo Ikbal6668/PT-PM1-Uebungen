@@ -6,4 +6,6 @@ den Werten 1 . . . 5.
 
 Code:
 
-double[] array = new double[]{1, 2, 3, 4, 5};
+public static void main(String[] args) {
+ doubleArray = new double[]{1, 2, 3, 4, 5};
+ }
