@@ -1,0 +1,29 @@
+public class EineZahl {
+int wert = 23;
+}
+Verändern Sie die Klasse EineZahl so, dass wert unveränderbar ist und von außerhalb des
+Klasse nur lesend darauf zugegriffen werden soll. Wie verändert sich der Zugriff dann?
+EineZahl eineZahl = new EineZahl();
+System.out.println(eineZahl.wert);
+– Klassendiagramm
+
+
+Code:
+
+public class EineZahl {
+    private final int wert = 23;  // Das Feld 'wert' ist privat und unveränderbar (final).
+
+    public int getWert() {  // Öffentliche Methode, um den Wert von 'wert' abzurufen.
+        return wert;
+    }
+
+    public static void main(String[] args) {
+        EineZahl eineZahl = new EineZahl();  // Erzeugung eines 'EineZahl'-Objekts.
+        System.out.println(eineZahl.getWert());  // Ausgabe des Wertes von 'wert'.
+    }
+}
+
+
+Ausagabe:
+
+23
