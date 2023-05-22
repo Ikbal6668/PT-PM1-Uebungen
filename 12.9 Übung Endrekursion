@@ -1,0 +1,71 @@
+Schreiben Sie eine endrekursive Version der folgenden Methode:
+int numPrimsBis(int n) {
+if (n == 1) {
+return 0;
+} else {
+return numPrimsBis(n - 1) + (istPrim(n) ? 1 : 0);
+}
+}
+
+Hinweis: istPrim() prüft, ob n eine Primzahl ist
+
+* Umstellung: Zwischenergebnis bei Rekursionsaufruf mitgeben
+
+
+Code:
+
+public class NumPrimBis {
+
+    /**
+     * Liefert die Anzahl der Primzahlen zwischen 2 und n; n muss >= 2 sein.
+     */
+    public int numPrimsBisRekusiv(int n) {
+        if (n == 1) {
+            return 0; // Basisfall: Wenn n = 1 ist, gibt es keine Primzahlen, daher wird 0 zurückgegeben
+        } else {
+            return numPrimsBisRekusiv(n - 1) + (istPrim(n) ? 1 : 0);
+            // Die Methode wird rekursiv aufgerufen, um die Anzahl der Primzahlen von n-1 zu berechnen,
+            // und je nachdem, ob n eine Primzahl ist oder nicht, wird 1 oder 0 addiert.
+        }
+    }
+
+    /**
+     * Liefert die Anzahl der Primzahlen zwischen 2 und n; n muss >= 2 sein. Endrekursive Variante.
+     */
+    public int numPrimsBisEndrekursiv(int n, int ergebnis) {
+        if (n == 1) {
+            return ergebnis; // Basisfall: Wenn n = 1 ist, wird das Ergebnis zurückgegeben
+        } else {
+            return numPrimsBisEndrekursiv(n - 1, ergebnis + (istPrim(n) ? 1 : 0));
+            // Die Methode wird endrekursiv aufgerufen, wobei das Ergebnis aktualisiert wird, indem
+            // je nachdem, ob n eine Primzahl ist oder nicht, 1 oder 0 addiert wird.
+        }
+    }
+
+    // Hilfsmethode zum Überprüfen, ob eine Zahl eine Primzahl ist
+    private boolean istPrim(int n) {
+        if (n <= 1) {
+            return false; // Zahlen kleiner oder gleich 1 sind keine Primzahlen
+        }
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false; // Wenn n durch eine Zahl i ohne Rest teilbar ist, ist es keine Primzahl
+            }
+        }
+        return true; // Wenn n nicht durch eine Zahl i ohne Rest teilbar ist, ist es eine Primzahl
+    }
+
+    public static void main(String[] args) {
+        NumPrimBis numPrimBis = new NumPrimBis();
+        // Aufruf der rekursiven Methode und Ausgabe der Anzahl der Primzahlen bis 10
+        System.out.println(numPrimBis.numPrimsBisRekusiv(10));
+        // Aufruf der endrekursiven Methode und Ausgabe der Anzahl der Primzahlen bis 10
+        System.out.println(numPrimBis.numPrimsBisEndrekursiv(10, 0));
+    }
+}
+
+
+Ausgabe:
+
+4
+4
