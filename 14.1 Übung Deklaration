@@ -1,0 +1,14 @@
+Deklarieren Sie ein Array vom Typ double. Wie viele Elemente hat das Array?
+
+• Konstruktion: new mit Länge
+
+
+Lösung:
+
+Die Anzahl der Elemente im Array wird durch die Deklaration und Initialisierung angegeben. Hier ist ein Beispiel, das ein Array vom Typ double mit 5 Elementen deklariert und initialisiert:
+
+Code:
+double[] array = new double[5];
+
+
+In diesem Fall hat das Array 5 Elemente, da die Größe des Arrays durch die Angabe des Indexbereichs in den eckigen Klammern definiert wird. Das Array enthält die Indizes 0, 1, 2, 3 und 4, insgesamt also 5 Elemente.
