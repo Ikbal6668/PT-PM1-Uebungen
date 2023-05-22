@@ -1,0 +1,9 @@
+Deklarieren Sie das Array erneut und initialisieren Sie es mit der vereinfachten Initialisierung mit
+den Werten 1 . . . 5.
+
+• Referenztypen, nul
+
+
+Code:
+
+double[] array = new double[]{1, 2, 3, 4, 5};
