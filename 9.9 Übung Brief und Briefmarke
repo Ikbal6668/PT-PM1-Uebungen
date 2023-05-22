@@ -1,0 +1,99 @@
+Schreiben Sie zwei Klassen Brief und Briefmarke. Ein Brief hat einen Empfänger (Text) und eine
+Briefmarke. Eine Briefmarke hat einen Wert (Zahl). Deklarieren und initialisieren Sie eine Varia-
+ble vom Typ Brief (inkl. einer Briefmarke mit dem Wert 80) und eine Variable für die Briefmarke.
+Zeichnen Sie eine Speicherskizze für die Variablen und Objekte.
+
+
+Code:
+
+Klasse Brief:
+
+public class Brief {
+    private String empfaenger; // Instanzvariable für den Empfänger des Briefs
+    private Briefmarke briefmarke; // Instanzvariable für die Briefmarke des Briefs
+
+    public Brief(String empfaenger, Briefmarke briefmarke) {
+        this.empfaenger = empfaenger; // Initialisierung des Empfängers mit dem übergebenen Wert
+        this.briefmarke = briefmarke; // Initialisierung der Briefmarke mit dem übergebenen Wert
+    }
+
+    public String getEmpfaenger() {
+        return empfaenger; // Rückgabe des Empfängers
+    }
+
+    public void setEmpfaenger(String empfaenger) {
+        this.empfaenger = empfaenger; // Setzen des Empfängers mit dem übergebenen Wert
+    }
+
+    public Briefmarke getBriefmarke() {
+        return briefmarke; // Rückgabe der Briefmarke
+    }
+
+    public void setBriefmarke(Briefmarke briefmarke) {
+        this.briefmarke = briefmarke; // Setzen der Briefmarke mit dem übergebenen Wert
+    }
+
+    public static void main(String[] args) {
+        Briefmarke briefmarke = new Briefmarke(80); // Erstellen einer Briefmarke mit dem Wert 80
+        Brief brief = new Brief("Max Mustermann", briefmarke); // Erstellen eines Briefs mit dem Empfänger "Max Mustermann" und der Briefmarke
+
+        // Werte der Instanzvariablen abrufen
+        String empfaenger = brief.getEmpfaenger(); // Abrufen des Empfängers
+        int briefmarkenWert = brief.getBriefmarke().getWert(); // Abrufen des Werts der Briefmarke
+
+        // Ausgabe auf der Konsole
+        System.out.println("Empfänger: " + empfaenger); // Ausgabe des Empfängers
+        System.out.println("Wert der Briefmarke: " + briefmarkenWert); // Ausgabe des Werts der Briefmarke
+        // Speicherskizze:
+        //       +--------------+
+        //       |    Brief     |
+        //       +--------------+
+        //       | empfaenger   |   --> "Max Mustermann"
+        //       | briefmarke   |   --> Referenz auf das Briefmarke-Objekt
+        //       +--------------+
+        //
+        //       +----------------+
+        //       |  Briefmarke    |
+        //       +----------------+
+        //       |      wert      |   --> 80
+        //       +----------------+
+    }
+}
+
+Klasse Briefmarke:
+
+public class Briefmarke {
+    private int wert; // Wert der Briefmarke
+
+    /**
+     * Konstruktor für die Klasse Briefmarke
+     * @param wert Der Wert der Briefmarke
+     */
+    public Briefmarke(int wert) {
+        this.wert = wert;
+    }
+
+    // Getter und Setter für die Instanzvariable
+
+    /**
+     * Getter für den Wert der Briefmarke
+     * @return Der Wert der Briefmarke
+     */
+    public int getWert() {
+        return wert;
+    }
+
+    /**
+     * Setter für den Wert der Briefmarke
+     * @param wert Der Wert der Briefmarke
+     */
+    public void setWert(int wert) {
+        this.wert = wert;
+    }
+}
+
+
+Ausgabe:
+
+Empfänger: Max Mustermann
+Wert der Briefmarke: 80
