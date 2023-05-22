@@ -1,0 +1,188 @@
+Einleitung: In dieser Übungsaufgabe entwickeln Sie einen Simulator für einen Kampf in einem Pen-
+and-Paper1 Rollenspiel. Dazu schreiben Sie insbesondere eine Klasse KriegerIn. Ein*e Krieger*in
+hat einen Namen und eine Anzahl von Lebenspunkten. Fällt die Anzahl der Lebenspunkte auf 0, ist
+der/die Krieger*in bewusstlosl. Außerdem hat er/sie je einen Wert für Angriff und Verteidigung aus
+[1; 20]. Beim Angriff würfelt man mit einem 20-seitigen Würfel. Ist die Augenzahl kleiner oder gleich
+dem Angriffswert, dann ist der Angriff erfolgreich (analog bei der Verteidigung).
+Dies ist das Klassendiagramm für die Aufgabe:
+
+Würfel: Schreiben Sie die Klasse für den Würfel, der einen Zufallswurf mit einem Würfel der ange-
+gebenen Seitenanzahl würfeln kann.
+
+KriegerIn: Schreiben Sie eine Klasse KriegerIn mit den oben beschriebenen Eigenschaften. Die
+Methoden angreifen() und verteidigen() liefern true wenn der Angriff, bzw. die Verteidigung
+mit dem gegebenen Wurf erfolgreich war. istBewusstlos() liefert wahr, wenn die Anzahl der Le-
+benspunkte kleiner oder gleich 0 ist.
+
+Simulation: Simulieren Sie einen Kampf zwischen zwei Krieger*innen. Die beiden wechseln zwi-
+schen Angriff und Verteidigung. Der Kampf endet, wenn eine*r der beiden bewusstlos ist. Bei jedem
+erfolgreichen Angriff (Angriff erfolgreich, Verteidigung nicht) wird ein Lebenspunkt abgezogen.
+
+
+Code:
+
+Package AufgabeÜbungKrieger:
+
+
+Klasse RollenspielSimulation:
+
+
+package AufgabeÜbungKrieger;
+
+/**
+ * In dieser Klasse wird ein Kampf zwischen zwei Krieger*innen simuliert.
+ */
+public class RollenspielSimulation {
+    public static void main(String[] args) {
+
+        // Zwei Krieger*innen und einen Würfel initialisieren
+        KriegerIn leia = new KriegerIn();
+        KriegerIn hubert = new KriegerIn();
+        leia.initialisieren("Leia", 8, 6, 4);
+        hubert.initialisieren("Hubert", 6, 8, 5);
+        Wuerfel wuerfel = new Wuerfel();
+        wuerfel.initialsieren(20);
+
+        // Die Rollen für Angriff und Verteidigung wechseln, daher zwei zusätzliche Variable.
+        KriegerIn kriegerInAngriff = leia;
+        KriegerIn kriegerInVerteidihung = hubert;
+
+        // Es wird so lange gekämpft, bis eine*r bewusstlos ist
+        while (!kriegerInAngriff.istBewusstlos() && !kriegerInVerteidihung.istBewusstlos()) {
+            int wurfAngriff = wuerfel.wuerfeln();
+            int wurfVerteidigung = wuerfel.wuerfeln();
+            // Schaden wird genommen, wenn der Angriff erfolgreich ist, die Verteidigung nicht
+            if (kriegerInAngriff.angreifen(wurfAngriff) && !kriegerInVerteidihung.verteidigen(wurfVerteidigung)) {
+                System.out.println("Angriff von " + kriegerInAngriff.name + " auf " + kriegerInVerteidihung.name + " erfolgreich");
+                kriegerInVerteidihung.lebenspunkte --;
+                System.out.println("Verbleibende Lebenspunkte von " + kriegerInVerteidihung.name + ": " + kriegerInVerteidihung.lebenspunkte);
+            } else {
+                System.out.println("Angriff von " + kriegerInAngriff.name + " auf " + kriegerInVerteidihung.name + " " +
+                        "nicht erfolgreich");
+            }
+
+            if (kriegerInAngriff == leia) {
+                kriegerInAngriff = hubert;
+                kriegerInVerteidihung = leia;
+            } else {
+                kriegerInAngriff = leia;
+                kriegerInVerteidihung = hubert;
+            }
+        }
+    }
+}
+
+
+
+
+Klasse KriegerIn:
+
+package AufgabeÜbungKrieger;
+
+/**
+ * Ein*e Krieger*in kann angreifen, verteidigen und verfügt über Lebenspunkte. Sind
+ * leine Lebenspunkte mehr übrig, dann wird er/sie bewusstlus.
+ */
+public class KriegerIn {
+
+    /**
+     * Name
+     */
+    String name;
+
+    /**
+     * Wert für Angriff aus [1;20], je größer, desto besser.
+     */
+    int angriff;
+
+    /**
+     * Wert für Verteidigung aus [1;20], je größer, desto besser.
+     */
+    int verteidigung;
+
+    /**
+     * Aktuelle Anzahl an Lebenspunkten. <= 0 bedeutet Bewusstlosigkeit
+     */
+    int lebenspunkte;
+
+    /**
+     * Initialisierung des Zustands des Objektes.
+     */
+    void initialisieren(String name, int angriff, int verteidigung, int lebenspunkte) {
+        this.name = name;
+        this.angriff = angriff;
+        this.verteidigung = verteidigung;
+        this.lebenspunkte = lebenspunkte;
+    }
+
+    /**
+     * Liefert wahr, wenn der Angriff mit dem gegebenen Würfelwurf erfolgreich war.
+     */
+    boolean angreifen(int wurf) {
+        return wurf <= angriff;
+    }
+
+    /**
+     * Liefert wahr, wenn die Verteidigung mit dem angegebenen Würfelwurf erfolgreich war.
+     */
+    boolean verteidigen(int wurf) {
+        return wurf <= verteidigung;
+    }
+
+    /**
+     * Liefert wahr, wenn der/die Krieger*in bewusslos ist.
+     */
+    public boolean istBewusstlos() {
+        return lebenspunkte <= 0;
+    }
+}
+
+
+
+Klasse Wuerfel:
+
+
+package AufgabeÜbungKrieger;
+
+/**
+ * Mit dieser Klasse werden Würfel repräsentiert mit denen man eine Zufallszahl würfeln kann.
+ */
+public class Wuerfel {
+
+    int anzahlAugen;
+
+    void initialsieren(int anzahlAugen) {
+        this.anzahlAugen = anzahlAugen;
+    }
+
+    int wuerfeln() {
+        return (int) (Math.random() * anzahlAugen) + 1;
+    }
+}
+
+
+
+Mögliche Ausgabe:
+
+Angriff von Leia auf Hubert nicht erfolgreich
+Angriff von Hubert auf Leia nicht erfolgreich
+Angriff von Leia auf Hubert erfolgreich
+Verbleibende Lebenspunkte von Hubert: 4
+Angriff von Hubert auf Leia nicht erfolgreich
+Angriff von Leia auf Hubert erfolgreich
+Verbleibende Lebenspunkte von Hubert: 3
+Angriff von Hubert auf Leia erfolgreich
+Verbleibende Lebenspunkte von Leia: 3
+Angriff von Leia auf Hubert nicht erfolgreich
+Angriff von Hubert auf Leia erfolgreich
+Verbleibende Lebenspunkte von Leia: 2
+Angriff von Leia auf Hubert nicht erfolgreich
+Angriff von Hubert auf Leia erfolgreich
+Verbleibende Lebenspunkte von Leia: 1
+Angriff von Leia auf Hubert nicht erfolgreich
+Angriff von Hubert auf Leia nicht erfolgreich
+Angriff von Leia auf Hubert nicht erfolgreich
+Angriff von Hubert auf Leia erfolgreich
+Verbleibende Lebenspunkte von Leia: 0
+
+Process finished with exit code 0
