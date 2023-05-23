@@ -1,0 +1,37 @@
+Schreiben Sie eine Methode
+boolean sindGleich(String text1, String text2),
+die wahr liefert, wenn die beiden Zeichenketten den gleichen Inhalt haben. Verwenden Sie
+dazu contains().
+
+– split()
+• Formatierung
+– format(), Platzhalter
+
+
+Code:
+
+public class StringComparator {
+    public static boolean sindGleich(String text1, String text2) {
+        // Überprüfen, ob der Inhalt von text2 in text1 enthalten ist
+        boolean gleich = text1.contains(text2);
+
+        return gleich;
+    }
+
+    public static void main(String[] args) {
+        // Testzeichenketten
+        String text1 = "Hello, World!";
+        String text2 = "World";
+
+        // Vergleiche die Zeichenketten
+        boolean gleich = sindGleich(text1, text2);
+
+        // Gib das Ergebnis aus
+        System.out.println("Sind gleich? " + gleich);
+    }
+}
+
+
+Ausgabe:
+
+Sind gleich? true
