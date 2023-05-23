@@ -1,0 +1,111 @@
+Schreiben Sie eine Klasse Person. Eine Person hat einen Vor- und einen Nachnamen (String), ein
+Alter in Jahren (Ganzzahl) und eine Größe in Metern (Gleitkommazahl). Alle Informationen werden
+im Konstruktor der Klasse gesetzt - allerdings werden die Werte nicht einzeln übergeben sondern
+in Form eines kommagetrennten Beschreibungstexts. Im Beschreibungstext können Leerzeichen
+vorkommen.
+
+Beispiel: "Mike, Hansen , 32,1.83"
+Im Konstruktor werden die vier Informationen aus dem Beschreibungstext extrahiert und damit die
+vier Felder des Objektes initialisiert. Ergänzen Sie Getter für die vier Felder.
+Schreiben Sie eine JUnit-Testklasse für Person mit einer Testmethode für den Konstruktor. Es reicht
+hier, mit einem Personen-Objekt zu testen.
+
+Optional: Ergänzen Sie in der Klasse Person eine Methode String toString(). Der Rückgabe-
+string soll so aussehen: [Vorname] [Nachname] (Alter: [Alter, zweistellig], Größe: [Größe in Metern mit
+einer Nachkommastelle]m). Für das Beispiel oben also:
+Mike Hansen (Alter: 32, Größe: 1,8m).
+Schreiben Sie eine JUnit-Testmethode für toString()
+
+
+Code:
+
+package Uebung;
+
+package Uebung;
+
+public class Person {
+    private String vorname; // Vorname der Person
+    private String nachname; // Nachname der Person
+    private int alter; // Alter der Person
+    private float groesse; // Größe der Person
+
+    // Konstruktor, der eine Zeichenkette als Eingabe erhält und die Person-Objekteigenschaften initialisiert
+    public Person(String personText) {
+        String[] token = personText.split(","); // Die Eingabezeichenkette wird anhand des Kommas aufgeteilt und in ein String-Array gespeichert
+        if (token.length != 4) { // Überprüfung, ob die Eingabe aus genau 4 Teilen besteht
+            throw new IllegalArgumentException("Falsche Eingabe."); // Wenn nicht, wird eine IllegalArgumentException geworfen
+        }
+        vorname = token[0].trim(); // Der erste Teil der Eingabe ist der Vorname, Leerzeichen werden entfernt und in der Instanzvariable vorname gespeichert
+        nachname = token[1].trim(); // Der zweite Teil der Eingabe ist der Nachname, Leerzeichen werden entfernt und in der Instanzvariable nachname gespeichert
+        alter = Integer.parseInt(token[2].trim()); // Der dritte Teil der Eingabe ist das Alter als Zeichenkette, Leerzeichen werden entfernt und in der Instanzvariable alter als Integer konvertiert gespeichert
+        groesse = Float.parseFloat(token[3].trim()); // Der vierte Teil der Eingabe ist die Größe als Zeichenkette, Leerzeichen werden entfernt und in der Instanzvariable groesse als Float konvertiert gespeichert
+    }
+
+    // Getter-Methode für die Instanzvariable nachname
+    public String getNachname() {
+        return nachname;
+    }
+
+    // Getter-Methode für die Instanzvariable vorname
+    public String getVorname() {
+        return vorname;
+    }
+
+    // Getter-Methode für die Instanzvariable groesse
+    public float getGroesse() {
+        return groesse;
+    }
+
+    // Getter-Methode für die Instanzvariable alter
+    public int getAlter() {
+        return alter;
+    }
+
+    // Überschriebene toString()-Methode, die eine formatierte Zeichenkette mit den Personendaten zurückgibt
+    @Override
+    public String toString() {
+        return String.format("%s %s (Alter: %d, Größe: %.1fm)", vorname, nachname, alter, groesse);
+    }
+}
+
+
+
+Junit Test:
+
+package Uebung;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class TestPerson {
+
+    @Test
+    /**
+     * Testmethode für den Konstruktor
+     */
+    public void testKonstruktor() {
+        Person p1 = new Person("Mike, Hansen, 32,1.83");
+
+        // Überprüfung, ob die Eigenschaften der Person richtig initialisiert wurden
+        assertEquals("Mike", p1.getVorname());
+        assertEquals("Hansen", p1.getNachname());
+        assertEquals(32, p1.getAlter());
+        assertEquals(1.83f, p1.getGroesse(), 1e-5); // Hier wird ein Toleranzwert (delta) von 1e-5 verwendet, da float-Werte nur mit begrenzter Genauigkeit gespeichert werden
+
+        // Hier können weitere assert-Anweisungen hinzugefügt werden, um zusätzliche Aspekte des Konstruktors zu testen
+    }
+
+    @Test
+    /**
+     * Testmethode für toString()
+     */
+    public void testToString() {
+        Person p1 = new Person("Mike, Hansen, 32,1.83");
+
+        // Überprüfung, ob die toString()-Methode die erwartete formatierte Zeichenkette zurückgibt
+        assertEquals("Mike Hansen (Alter: 32, Größe: 1,8m)", p1.toString());
+
+        // Hier können weitere assert-Anweisungen hinzugefügt werden, um zusätzliche Aspekte der toString()-Methode zu testen
+    }
+}
+
