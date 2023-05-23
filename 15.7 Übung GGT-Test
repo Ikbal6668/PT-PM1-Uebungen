@@ -1,0 +1,72 @@
+Schreiben Sie eine Testmethode für die folgende Methode
+static int berechneGgt(int zahl1, int zahl2){...}
+der Klasse Bruch zum Berechnen des größten, gemeinsamen Teilers zweier Zahlen mit min-
+destens einer Assertion.
+
+Code:
+
+package Uebung;
+
+public class GGT {
+
+    /**
+     * Berechnet den größten gemeinsamen Teiler (GGT) zweier Zahlen.
+     *
+     * @param zahl1 die erste Zahl
+     * @param zahl2 die zweite Zahl
+     * @return der größte gemeinsame Teiler der beiden Zahlen
+     */
+    public int ggt(int zahl1, int zahl2) {
+        // Sicherstellung, dass beide Zahlen positive Werte haben
+        zahl1 = Math.abs(zahl1);
+        zahl2 = Math.abs(zahl2);
+
+        // Algorithmus von Euklid zur GGT-Berechnung
+        int ergebnis = 0;
+        if (zahl1 == 0) {
+            // Falls die erste Zahl 0 ist, ist der GGT die zweite Zahl
+            ergebnis = zahl2;
+        } else {
+            // Solange die zweite Zahl nicht 0 ist, wiederhole den folgenden Schritt
+            while (zahl2 != 0) {
+                if (zahl1 > zahl2) {
+                    // Subtrahiere zahl2 von zahl1, falls zahl1 größer ist
+                    zahl1 = zahl1 - zahl2;
+                } else {
+                    // Sonst subtrahiere zahl1 von zahl2
+                    zahl2 = zahl2 - zahl1;
+                }
+            }
+            // Der GGT ist am Ende zahl1 (oder zahl2)
+            ergebnis = zahl1;
+        }
+
+        // Gib den GGT zurück
+        return ergebnis;
+    }
+
+}
+
+Junit Test:
+
+package Uebung;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class GGTTest {
+    @Test
+    public void testeGgt() {
+        // Erzeuge eine Instanz der Klasse GGT
+        GGT ggt = new GGT();
+
+        // Überprüfe, ob der GGT von 6 und 9 den erwarteten Wert 3 hat
+        assertEquals(3, ggt.ggt(6, 9));
+        // Der erste Parameter ist der erwartete Wert (3), der zweite Parameter ist der tatsächliche Wert,
+        // der von der Methode ggt() zurückgegeben wird, wenn sie mit den Argumenten 6 und 9 aufgerufen wird.
+
+        // Weitere Assertions können hier hinzugefügt werden, um verschiedene Fälle zu testen
+
+    }
+}
+
